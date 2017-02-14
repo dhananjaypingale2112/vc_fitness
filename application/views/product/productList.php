@@ -175,11 +175,13 @@
                <div class="row">
               <div class="col-md-6 col-sm-6">
               <div class="ratings">
+
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star-half-empty checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>   
+                    <span class="fa fa-star"></span>   
+
               </div>
               </div>
               <div class="col-md-6 col-sm-6">

@@ -37,8 +37,10 @@ class Product_model extends CI_Model {
 	}
 	public function selectProduct($catId,$limit)
 	{
-		//return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName, AVG(rev.rating) FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) LEFT JOIN oc_review rev ON(pro.product_id = rev.product_id)  WHERE pro_cat.category_id = $catId GROUP BY rev.product_id $limit")->result_array();
+		//return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName, AVG(rev.rating) as rate, wish.customer_id FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) LEFT JOIN oc_review rev ON(pro.product_id = rev.product_id) LEFT JOIN oc_customer_wishlist wish ON(wish.product_id = pro.product_id) WHERE pro_cat.category_id = $catId GROUP BY rev.product_id $limit")->result_array();
+
 		return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName, wish.customer_id FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) LEFT JOIN oc_customer_wishlist wish ON(wish.product_id = pro.product_id) WHERE pro_cat.category_id = $catId ORDER BY pro.product_id $limit")->result_array();
+		
 		//return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id)  WHERE pro_cat.category_id = $catId $limit")->result_array();
 	}
 	public function selectSingelProduct($proId)
