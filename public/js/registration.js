@@ -293,7 +293,7 @@ function registerUser()
     }
 }
 /***************/
-function loginAction(redirect,productId)
+function loginAction(redirect,itemId,from)
 {
     var check = 1;
 
@@ -342,12 +342,21 @@ function loginAction(redirect,productId)
                     if(redirect == 'redirectToHome')
                     {
                         //alert(123);
-                        if(productId != "")
+                        if(itemId != "" && from == "wishlist")
                         {
                             var custId = "User is loged in now";
-                            addProToWishlist(productId,custId);
+                            addProToWishlist(itemId,custId);
                             setInterval(function(){
                             window.location.href = base_url+'product/productView';
+                            }, 2000);
+                            
+                        }
+                        else if(itemId != "" && from == "packages")
+                        {
+                            // var custId = "User is loged in now";
+                            // addProToWishlist(productId,custId);
+                            setInterval(function(){
+                            window.location.href = base_url;
                             }, 2000);
                             
                         }

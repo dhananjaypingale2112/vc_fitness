@@ -18,9 +18,10 @@ class Auth extends CI_Controller {
 	{
 		$this->load->view('register/registration');
 	}
-    public function loginView($product_id = "")
+    public function loginView($itemId = "",$from="")
     {
-        $data['product_id'] = $product_id;
+        $data['itemId'] = $itemId;
+        $data['from'] = $from;
         $this->load->view('register/login',$data);
     }
     public function verifyUser()    // verifiaction at the time of registration

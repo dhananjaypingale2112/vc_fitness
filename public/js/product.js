@@ -100,7 +100,8 @@ function addToWishlist(productId,customer_id)
 {
     if(customer_id == "")
     {
-        window.location.href = base_url+'Auth/loginView/'+productId;
+        var from = "wishlist";
+        window.location.href = base_url+'Auth/loginView/'+productId+'/'+from;
     }
     else
     {

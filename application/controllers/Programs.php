@@ -18,7 +18,14 @@ class Programs extends CI_Controller {
 			$programId = $data['programs'][0]['program_id'];
 		}
 		$data['trainings'] = $this->Program_model->getAllTrainingType($programId);
-		//echo "<pre>";print_r($data['trainings'][0]['content']);exit;
+		//echo "<pre>";print_r($data['trainings']);exit;
 		$this->load->view('programs/programsView',$data);
+	}
+	public function getTrainingContent()
+	{
+		$trainingId = $this->input->post('trainingId');
+		$data = $this->Program_model->getTrainingContent($trainingId);
+		//echo "<pre>";print_r($data[0]['content']);exit;
+		echo $data[0]['content'];
 	}
 }

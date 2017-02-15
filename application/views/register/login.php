@@ -91,7 +91,7 @@
 						 </div>
 						<div class="clear"> </div>
 					  </div>  
-						<input type="button" onclick="loginAction('redirectToHome','<?php echo $product_id;?>')" value="Login">
+						<input type="button" onclick="loginAction('redirectToHome','<?php echo $itemId;?>','<?php echo $from;?>')" value="Login">
 					</form>
 				</div>
 				</div>

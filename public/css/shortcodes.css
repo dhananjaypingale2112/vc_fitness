@@ -605,7 +605,7 @@
 	
 	/*----*****---- << Vertical Tabs >> ----*****----*/
 	.dt-sc-tabs-vertical-container { float:left; width:100%; margin:0px 0px 20px; padding:0px; clear:both; }
-	ul.dt-sc-tabs-vertical-frame { float:left; width:22%; margin:0px 20px 0px 0px; padding:0px; }
+	/*ul.dt-sc-tabs-vertical-frame { float:left; width:22%; margin:0px 20px 0px 0px; padding:0px; }
 	ul.dt-sc-tabs-vertical-frame > li { float:left; display:block; margin:0px 0px 4px; padding:0px; width:100%; position:relative; }
 	ul.dt-sc-tabs-vertical-frame > li > a { background:#f4f4f4; display:block; border-left:5px solid #c8c8c8; margin:0px; padding:10px 0px 10px 15px; font-weight:normal; color:#37251b; font-size:16px; text-align:left;  }
 		ul.dt-sc-tabs-vertical-frame > li > a:hover { background:#F26522; color:#fff; text-decoration:none;  }
@@ -613,7 +613,7 @@
 	.float-right .dt-sc-tabs-vertical-frame { float:right;  margin:0px 0px 0px 20px; }
 	.dt-sc-tabs-vertical-frame-content iframe { width:100%; }
 	.dt-sc-tabs-vertical-frame-content { float:left; width:76%; margin:0px; padding:0px; position:relative; }
-	
+	*/
 	/*----*****---- << Gift Card Section >> ----*****----*/
 	.dt-sc-gift-card-section { float:left; width:100%; margin:0px; padding:0px; display:block; clear:both; }
 	.dt-sc-gift-card-section .title { display:inline-block; text-align:center; width:100%; margin:0px 0px 20px; }
@@ -1437,3 +1437,17 @@ iPad 3
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
 /* Styles */
 }
+
+
+
+
+
+ul.dt-sc-tabs-vertical-frame1 { float:left; width:22%; margin:0px 20px 0px 0px; padding:0px; }
+	ul.dt-sc-tabs-vertical-frame1 > li { float:left; display:block; margin:0px 0px 4px; padding:0px; width:100%; position:relative; }
+	ul.dt-sc-tabs-vertical-frame1 > li > a { background:#f4f4f4; display:block; border-left:5px solid #c8c8c8; margin:0px; padding:10px 0px 10px 15px; font-weight:normal; color:#37251b; font-size:16px; text-align:left;  }
+		ul.dt-sc-tabs-vertical-frame1 > li > a:hover { background:#F26522; color:#fff; text-decoration:none;  }
+	ul.dt-sc-tabs-vertical-frame1 > li > a.current { color:#fff; }
+	.float-right .dt-sc-tabs-vertical-frame1 { float:right;  margin:0px 0px 0px 20px; }
+	.dt-sc-tabs-vertical-frame1-content iframe { width:100%; }
+	.dt-sc-tabs-vertical-frame1-content { float:left; width:76%; margin:0px; padding:0px; position:relative; }
+	

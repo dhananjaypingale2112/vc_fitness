@@ -438,5 +438,7 @@ $(document).ready(function(){
 <script type="text/javascript" src="<?php echo base_url();?>public/js/form-validation.js"></script> 
 <script type="text/javascript" src="<?php echo base_url();?>public/js/registration.js"></script> 
 <script type="text/javascript" src="<?php echo base_url();?>public/js/product.js"></script> 
+<script type="text/javascript" src="<?php echo base_url();?>public/js/program.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>public/js/packages.js"></script>
 </body>
 </html>

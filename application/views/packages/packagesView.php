@@ -1,6 +1,7 @@
 <?php 
   $data['page'] = "packagespage";
   $this->load->view('templates/header',$data);
+ $customer_id = $this->session->userdata('customer_id');
 ?>
 
 <div id="main">
@@ -40,93 +41,23 @@
                                                 </div>
                                             </div>
                                             <ul class="dt-sc-tb-content">
-                                                <li> Cardio Machines</li>
-                                                <li>Weight Training Sets</li>
-                                                <li>General Assistance</li>
-                                                <li>Diet Guides</li>
-                                                <li>Personal Trainers</li>
-                                            </ul>
+                                            <?php 
+                                            $trainingName = explode("," , $value['package_training_type_name']);
+                                                 foreach ($trainingName as $key1 => $value1 ):
+                                                    if(!empty($value1)):
+                                             ?>
+                                                <li> <?php echo $value1; ?></li>
+                                        <?php endif; endforeach; ?>
+                                        </ul>
                                         </div>
-                                        <div class="dt-sc-buy-now">
-                                        	<a class="dt-sc-button medium" target="_blank" href="register.html" data-hover="Enroll Now">Enroll Now</a>
+                                        <div class="dt-sc-buy-now" onclick="insertPackage('<?php echo $value['package_id']?>','<?php echo $customer_id ?>')">
+                                        	<a class="dt-sc-button medium" target="_blank" data-hover="Enroll Now">Enroll Now</a>
                                         </div>
                                     </div>
                                 </div>
                                 <?php 
                                     endforeach;
                                 ?>
-                                <!-- <div class="dt-sc-one-third column">
-                                	<div class="dt-sc-pr-tb-col type3 purple selected">
-                                    	<div class="dt-sc-pr-tb-col-wrapper">
-	                                    	<div class="dt-sc-tb-header">
-                                                <div class="dt-sc-tb-title">
-                                                    <h3>Personal Trainers</h3>
-                                                    <span>Train with your Personal Trainer</span>
-                                                    <p><span>Best Plan</span></p>
-                                                </div>
-                                                 <div class="dt-sc-one-half column no-space">
-                                                    <div class="dt-sc-price">
-                                                        <span>$119.99</span><br>3 Months
-                                                    </div>
-                                                </div>
-                                                <div class="dt-sc-one-half column no-space">
-                                                    <div class="dt-sc-price last">
-                                                        <span>$219.99</span><br>6 Months
-                                                    </div>
-                                                </div>
-                                                <div class="dt-sc-price">
-                                                    <span>$449.99</span><br>Full year Subscription
-                                                </div>
-                                            </div>
-                                            <ul class="dt-sc-tb-content">
-                                                <li> Cardio Machines</li>
-                                                <li>Weight Training Sets</li>
-                                                <li>General Assistance</li>
-                                                <li>Diet Guides</li>
-                                                <li>Personal Trainers</li>
-                                            </ul>
-                                        </div>
-                                        <div class="dt-sc-buy-now">
-                                        	<a class="dt-sc-button medium" target="_blank" href="register.html" data-hover="Enroll Now">Enroll Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dt-sc-one-third column">
-                                	<div class="dt-sc-pr-tb-col type3 skyblue">
-                                    	<div class="dt-sc-pr-tb-col-wrapper">
-	                                    	<div class="dt-sc-tb-header">
-                                                <div class="dt-sc-tb-title">
-                                                    <h3>Result Gainer</h3>
-                                                    <span>Complete Training Set</span>
-                                                    <p><span>Best Plan</span></p>
-                                                </div>
-                                                 <div class="dt-sc-one-half column no-space">
-                                                    <div class="dt-sc-price">
-                                                        <span>$119.99</span><br>3 Months
-                                                    </div>
-                                                </div>
-                                                <div class="dt-sc-one-half column no-space">
-                                                    <div class="dt-sc-price last">
-                                                        <span>$169.99</span><br>6 Months
-                                                    </div>
-                                                </div>
-                                                <div class="dt-sc-price">
-                                                    <span>$250.99</span><br>Full year Subscription
-                                                </div>
-	                                        </div>
-                                            <ul class="dt-sc-tb-content">
-                                                <li> Cardio Machines</li>
-                                                <li>Weight Training Sets</li>
-                                                <li>General Assistance</li>
-                                                <li>Diet Guides</li>
-                                                <li>Personal Trainers</li>
-                                            </ul>
-										</div>
-                                        <div class="dt-sc-buy-now">
-                                            <a class="dt-sc-button medium" target="_blank" href="register.html" data-hover="Enroll Now">Enroll Now</a>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
 						</div>
 
