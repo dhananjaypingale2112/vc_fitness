@@ -440,5 +440,6 @@ $(document).ready(function(){
 <script type="text/javascript" src="<?php echo base_url();?>public/js/product.js"></script> 
 <script type="text/javascript" src="<?php echo base_url();?>public/js/program.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>public/js/packages.js"></script>
+<script src="<?php echo base_url();?>public/js/datepicker/bootstrap-datepicker.js"></script>
 </body>
 </html>

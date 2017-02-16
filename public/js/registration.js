@@ -341,22 +341,20 @@ function loginAction(redirect,itemId,from)
                     display_alert('succ',msg);
                     if(redirect == 'redirectToHome')
                     {
-                        //alert(123);
+                        //alert(itemId);alert(from);
                         if(itemId != "" && from == "wishlist")
                         {
                             var custId = "User is loged in now";
-                            addProToWishlist(itemId,custId);
                             setInterval(function(){
                             window.location.href = base_url+'product/productView';
+                            addProToWishlist(itemId,custId);
                             }, 2000);
                             
                         }
                         else if(itemId != "" && from == "packages")
                         {
-                            // var custId = "User is loged in now";
-                            // addProToWishlist(productId,custId);
                             setInterval(function(){
-                            window.location.href = base_url;
+                            window.location.href = base_url+'packages/custPackagesView/'+itemId;
                             }, 2000);
                             
                         }

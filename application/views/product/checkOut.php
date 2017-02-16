@@ -236,10 +236,7 @@
                   <b>
                    <br>
                     <br>
-                  <p class="col-md-12"><strong>Add Comments About Your Order</strong></p>
-                  <p>
-                    <textarea name="comment" rows="8" class="form-control"></textarea>
-                  </p>
+                   
                    <div class="buttons">
                     <div class="pull-left"> <span class="fa fa-calendar"></span> <span id="batch_date">01/07/2017</span> <span id="batch_time">11AM-2PM</span> </div>
                     <div class="pull-right">

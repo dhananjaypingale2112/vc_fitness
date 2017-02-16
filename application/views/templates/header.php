@@ -73,7 +73,8 @@
   <!-- slider-video --> 
  <script src="<?php echo base_url();?>public/css/bootstrap/jquery.classybox.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/css/bootstrap/jquery.classybox.min.css"/>
- 
+
+
 <!-- slider-video-end --> 
 <!-- **treaser-my-css** -->
 <link rel="stylesheet" href="<?php echo base_url();?>public/css/common.css">
@@ -675,12 +676,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/css/shop.style.css" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 <script>
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
-        format: 'mm/dd/yyyy',
+        format: 'dd/mm/yyyy',
         container: container,
         todayHighlight: true,
         autoclose: true,
@@ -688,5 +690,5 @@
       date_input.datepicker(options);
     })
 </script>
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/js/datepicker/datepicker.css" />
 <!-- products-end -->
