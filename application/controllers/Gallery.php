@@ -5,12 +5,13 @@ class Gallery extends CI_Controller {
 
 	function __construct()
     {
-        // Construct the parent class
         parent::__construct();
-        $this->load->helper('cookie');
+        $this->load->model('Helper_model');
     }
 	public function index()
 	{
-		$this->load->view('pages/gallery');
+		$data['gallery'] = $this->Helper_model->selectAll("","oc_gallery");
+		//echo "<pre>"; print_r($data);exit;
+		$this->load->view('pages/gallery',$data);
 	}
 }

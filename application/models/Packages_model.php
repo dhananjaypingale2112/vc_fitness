@@ -7,9 +7,9 @@ class Packages_model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function getAllPackages()
+	public function getAllPackages($id)
 	{
-		return $data = $this->db->query("SELECT * FROM oc_package_master")->result_array();
+		return $data = $this->db->query("SELECT * FROM oc_package_master WHERE package_type = $id")->result_array();
 	}
 
 

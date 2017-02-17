@@ -23,7 +23,7 @@
 	                                    	<div class="dt-sc-tb-header">
                                                 <div class="dt-sc-tb-title">
                                                     <h3><?php echo $value['package_name'] ?></h3>
-                                                    <span>Gain Without a Personal Trainer</span>
+                                                    <span><?php echo $value['package_details'] ?></span>
                                                     <p><span>Best Plan</span></p>
                                                 </div>
                                                  <div class="dt-sc-one-half column no-space">
@@ -69,6 +69,10 @@
                                 <div class="dt-sc-clear"></div>
                             	<div class="carousel_items">
                                 	<div class="dt_carousel">
+
+                                <?php 
+                                    foreach ($optional_packages as $key => $value):
+                                ?>
 	                                    <div class="dt-sc-one-third column">
                                             <div class="dt-sc-programs">
                                                 <div class="dt-sc-pro-thumb">
@@ -77,25 +81,30 @@
                                                 <div class="dt-sc-pro-detail">
                                                     <div class="dt-sc-pro-content">
                                                         <div class="dt-sc-pro-title">
-                                                            <h3>Muscle Build Pro</h3>
-                                                            <span>1 yr training program</span>
+                                                            <h3><?php echo $value['package_name'] ?></h3>
+                                                            <span><?php echo $value['package_details'] ?></span>
                                                         </div>
                                                         <ul class="dt-sc-fancy-list circle-o">
-                                                            <li>3 days a week program</li>
-                                                            <li>Diet program Included</li>
-                                                            <li>Professional Trainers</li>
+                                                <?php 
+                                                    $trainingName = explode("," , $value['package_training_type_name']);
+                                                         foreach ($trainingName as $key1 => $value1 ):
+                                                            if(!empty($value1)):
+                                                ?>
+                                                        <li> <?php echo $value1; ?></li>
+                                                <?php endif; endforeach; ?>
                                                         </ul>
                                                     </div>
-                                                    <div class="dt-sc-pro-price">
+                                                    <div class="dt-sc-pro-price"  onclick="insertPackage('<?php echo $value['package_id']?>','<?php echo $customer_id ?>')">
                                                         <p class="pro-price-content">
                                                             <sup>$</sup> 89.99/<span>6 Months</span>
                                                         </p>
-                                                        <a class="dt-sc-button small" href="#" data-hover="Enroll Now">Enroll Now</a>
+                                                        <a class="dt-sc-button small" data-hover="Enroll Now">Enroll Now</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="dt-sc-one-third column">
+                                    <?php endforeach; ?>
+                                        <!-- <div class="dt-sc-one-third column">
                                             <div class="dt-sc-programs">
                                                 <div class="dt-sc-pro-thumb">
                                                     <a href="#"><img src="<?php echo base_url();?>public/images/event2.jpg" alt="" title=""></a>
@@ -173,7 +182,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 	<div class="carousel-arrows">
                                     	<a href="#" class="prev-arrow"><i class="fa fa-angle-left"></i></a>

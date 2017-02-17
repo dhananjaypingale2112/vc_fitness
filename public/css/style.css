@@ -223,7 +223,7 @@
 	.selection-box { position:relative; clear:both; }
 	.selection-box:before, .selection-box:after { content:""; pointer-events:none; position:absolute; }
 	.selection-box:before { z-index:1; right:17px; top:3px; bottom:0px; height:0px; margin:auto; border-left:7px solid transparent; border-right:7px solid transparent; border-top:7px solid #fff; }
-	.selection-box:after { width:50px; height:50px; right:0px; top:0px; }
+	.selection-box:after { width:50px; height:34px; right:0px; top:0px; }
 	.selection-box select { background:#ffffff; }
 	
 	input[type="submit"], button, input[type="button"], input[type="reset"] { float:right; font-size:16px; font-weight:bold; line-height:normal; display:inline-block; margin:10px 0px 0px; cursor:pointer; outline:none; position:relative; z-index:1; color:#ffffff; position:relative; padding:11px 20px; text-transform:uppercase; -webkit-appearance: none; }

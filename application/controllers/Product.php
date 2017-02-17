@@ -8,8 +8,6 @@ class Product extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->model('Helper_model');
-        $this->load->library('cart');
-        // $this->load->helper('session');
     }
 	public function productView($catId="",$pageno = "")
 	{

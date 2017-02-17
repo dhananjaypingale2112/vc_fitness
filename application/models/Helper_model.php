@@ -19,6 +19,7 @@ class Helper_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
 	public function insert($tableName,$data)
 	{
 		$this->db->insert($tableName,$data);
@@ -77,7 +78,7 @@ class Helper_model extends CI_Model {
 		$this->db->select($select);
 		$this->db->from($tableName);
 		$query = $this->db->get();
-		return $query->result();
+		return $query->result_array();
 	}
 
 	public function selectAllwhere($select,$tableName,$where)

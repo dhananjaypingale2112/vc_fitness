@@ -23,15 +23,17 @@
                                 <a data-filter=".flexibility" href="#">Events</a>
                              </div>
                             <div class="dt-sc-portfolio-container">
+                            <?php foreach ($gallery as $key => $value):
+                            ?>
                               <div class="portfolio dt-sc-one-third column flexibility agility">
                                     <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url();?>public/images/portfolio1.jpg" alt="" title="">
+                                        <img src="<?php echo base_url()."public/images/".$value['img_path'];?>" alt="" title="">
                                         <div class="image-overlay">
                                             <div class="fig-content-wrapper">
                                                 <div class="fig-overlay">
                                                   <p>
-                                                      <a href="<?php echo base_url();?>public/images/portfolio1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      <a href="gallery-detail.html" class="link"> <span class="fa fa-link"> </span> </a>
+                                                      <a href="<?php echo base_url().'public/images/'.$value['img_path']?>" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
+                                                      
                                                   </p>
                                                 </div>
                                             </div>
@@ -47,7 +49,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="portfolio dt-sc-one-third column agility coordination">
+                              <?php endforeach; ?>
+                                <!-- <div class="portfolio dt-sc-one-third column agility coordination">
                                     <div class="portfolio-thumb">
                                         <img src="<?php echo base_url();?>public/images/portfolio2.jpg" alt="" title="">
                                         <div class="image-overlay">
@@ -55,7 +58,7 @@
                                                 <div class="fig-overlay">
                                                   <p>
                                                       <a href="<?php echo base_url();?>public/images/portfolio2.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      <a href="gallery-detail-with-left-sidebar.html" class="link"> <span class="fa fa-link"> </span> </a>
+                                                      
                                                   </p>
                                                 </div>
                                             </div>
@@ -166,7 +169,7 @@
                                             <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
               </div>
             </div>
