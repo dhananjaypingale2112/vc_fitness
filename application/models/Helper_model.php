@@ -12,12 +12,15 @@ class Helper_model extends CI_Model {
 	}
 	public function select($select="",$tableName,$fields="")
 	{
+		//print_r($select);exit();
 		$this->db->select($select);
 		$this->db->from($tableName);
 		$this->db->where($fields);
 		//echo $this->db->_compile_select();
 		$query = $this->db->get();
+		//print_r($query);exit();
 		return $query->result_array();
+		//echo $this->db->last_query();
 	}
 
 	public function insert($tableName,$data)
@@ -87,7 +90,7 @@ class Helper_model extends CI_Model {
 		$this->db->from($tableName);
 		$this->db->where($where);
 		$query = $this->db->get();
-		return $query->result();
+		return $query->result_array();
 	}
 
 	public function selectallOrder($select,$tableName,$order_id,$order)
@@ -98,7 +101,6 @@ class Helper_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-
 
 	public function selectallWhereOrder($select,$tableName,$where,$order_id,$order)
 	{

@@ -42,9 +42,7 @@ function confirmOrder()
             //alert(resp);
             if(resp == 1)
             {
-                setInterval(function(){
-                    window.location.href = base_url+'product/orderSuccess';
-                }, 100);
+                window.location.href = base_url+'product/orderSuccess';
             }
             else
             {
@@ -121,7 +119,6 @@ function addToWishlist(productId,customer_id)
             }
         });
     }
-
 }
 function removeCardItem(rowId,productId)
 {

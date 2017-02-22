@@ -1,6 +1,7 @@
 <?php 
   $data['page'] = "gallerypage";
   $this->load->view('templates/header',$data);
+  $customer_id = $this->session->userdata('customer_id');
 ?> 
 <!-- program-end -->
 <div id="main"> 
@@ -17,11 +18,13 @@
                <div class="column dt-sc-one-column first">
                 <div class="dt-sc-clear"> </div>
                    <div class="dt-sc-sorting-container">
-                                <a class="first active-sort" data-filter="*" href="#">All</a>
-                                <a data-filter=".agility" href="#">Celebrities</a>
-                                <a data-filter=".coordination" href="#">Gym</a>
-                                <a data-filter=".flexibility" href="#">Events</a>
-                             </div>
+                   <a class="first active-sort" data-filter="*" href="<?php echo base_url().'gallery/index/' ?>">ALL</a>
+                   <?php foreach ($gallery_type as $key => $value):
+
+                   ?>
+                      <a class="first active-sort" data-filter="*" href="<?php echo base_url().'gallery/index/'.$value['gallery_type_id'] ?>"><?php echo (isset($gallery_type)?$value['name']:"")?></a>
+                  <?php endforeach; ?>
+                  </div>
                             <div class="dt-sc-portfolio-container">
                             <?php foreach ($gallery as $key => $value):
                             ?>
@@ -41,135 +44,15 @@
                                     </div>
                                     <div class="portfolio-detail">
                                         <div class="portfolio-title">
-                                            <h4><a href="gallery-detail.html">Flexible Muscle Stretches</a></h4>
-                                            <p><a href="#">Events</a></p>
+                                            <h4><a href="gallery-detail.html"><?php echo $value['title'] ?></a></h4>
+                                            <!-- <p><a href="#">Events</a></p> -->
                                         </div>
-                                        <div class="views">
-                                            <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
+                                        <div class="views" onclick="galleryLike('<?php echo $value['id']?>','<?php echo $customer_id; ?>')">
+                                            <span><i id="like_<?php echo $value['id']?>"class="fa <?php echo (!empty($customer_id) && $value['customer_id'] == $customer_id)?"fa-heart":"fa-heart-o" ?>"></i><br><a class="likeThis" id="likeCount_<?php echo $value['id']?>"><?php echo empty($value['cnt'])?"0":$value['cnt']; ?> Likes</a></span>
                                         </div>
                                     </div>
                                 </div>
                               <?php endforeach; ?>
-                                <!-- <div class="portfolio dt-sc-one-third column agility coordination">
-                                    <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url();?>public/images/portfolio2.jpg" alt="" title="">
-                                        <div class="image-overlay">
-                                            <div class="fig-content-wrapper">
-                                                <div class="fig-overlay">
-                                                  <p>
-                                                      <a href="<?php echo base_url();?>public/images/portfolio2.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      
-                                                  </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-detail">
-                                        <div class="portfolio-title">
-                                            <h4><a href="gallery-detail-with-left-sidebar.html">Shoulder Press</a></h4>
-                                            <p><a href="#">Events</a></p>
-                                        </div>
-                                        <div class="views">
-                                            <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio dt-sc-one-third column flexibility agility coordination">
-                                    <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url();?>public/images/portfolio3.jpg" alt="" title="">
-                                        <div class="image-overlay">
-                                            <div class="fig-content-wrapper">
-                                                <div class="fig-overlay">
-                                                  <p>
-                                                      <a href="<?php echo base_url();?>public/images/portfolio3.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      <a href="gallery-detail-with-right-sidebar.html" class="link"> <span class="fa fa-link"> </span> </a>
-                                                  </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-detail">
-                                        <div class="portfolio-title">
-                                            <h4><a href="gallery-detail-with-right-sidebar.html">Squats are for everyone</a></h4>
-                                            <p><a href="#">Events</a></p>
-                                        </div>
-                                        <div class="views">
-                                            <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio dt-sc-one-third column agility coordination">
-                                    <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url();?>public/images/portfolio4.jpg" alt="" title="">
-                                        <div class="image-overlay">
-                                            <div class="fig-content-wrapper">
-                                                <div class="fig-overlay">
-                                                  <p>
-                                                      <a href="<?php echo base_url();?>public/images/portfolio4.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      <a href="gallery-detail.html" class="link"> <span class="fa fa-link"> </span> </a>
-                                                  </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-detail">
-                                        <div class="portfolio-title">
-                                            <h4><a href="gallery-detail.html">Gymnastic Shots</a></h4>
-                                            <p><a href="#">Events</a></p>
-                                        </div>
-                                        <div class="views">
-                                            <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio dt-sc-one-third column flexibility agility">
-                                    <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url();?>public/images/portfolio5.jpg" alt="" title="">
-                                        <div class="image-overlay">
-                                            <div class="fig-content-wrapper">
-                                                <div class="fig-overlay">
-                                                  <p>
-                                                      <a href="<?php echo base_url();?>public/images/portfolio5.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      <a href="gallery-detail-with-left-sidebar.html" class="link"> <span class="fa fa-link"> </span> </a>
-                                                  </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-detail">
-                                        <div class="portfolio-title">
-                                            <h4><a href="gallery-detail-with-left-sidebar.html">Perfect Abs</a></h4>
-                                            <p><a href="#">Events</a></p>
-                                        </div>
-                                        <div class="views">
-                                            <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio dt-sc-one-third column agility coordination flexibility">
-                                    <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url();?>public/images/portfolio6.jpg" alt="" title="">
-                                        <div class="image-overlay">
-                                            <div class="fig-content-wrapper">
-                                                <div class="fig-overlay">
-                                                  <p>
-                                                      <a href="<?php echo base_url();?>public/video/Vinod Channa.mp4" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-plus"> </span></a>
-                                                      <a href="gallery-detail-with-right-sidebar.html" class="link"> <span class="fa fa-link"> </span> </a>
-                                                  </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-detail">
-                                        <div class="portfolio-title">
-                                            <h4><a href="gallery-detail-with-right-sidebar.html">Dumbell Tricks</a></h4>
-                                            <p><a href="#">Events</a></p>
-                                        </div>
-                                        <div class="views">
-                                            <span><i class="fa fa-heart-o"></i><br><a href="#" class="likeThis">13 Likes</a></span>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
               </div>
             </div>

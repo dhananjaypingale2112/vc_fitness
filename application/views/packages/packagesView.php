@@ -76,7 +76,7 @@
 	                                    <div class="dt-sc-one-third column">
                                             <div class="dt-sc-programs">
                                                 <div class="dt-sc-pro-thumb">
-                                                    <a href="#"><img src="<?php echo base_url();?>public/images/event1.jpg" alt="" title=""></a>
+                                                    <a href="#"><img src="<?php echo base_url().'public/images/'.$value['package_img']?>" alt="" title=""></a>
                                                 </div>
                                                 <div class="dt-sc-pro-detail">
                                                     <div class="dt-sc-pro-content">

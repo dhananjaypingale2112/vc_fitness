@@ -7,18 +7,16 @@ class Cmaster extends CI_Controller {
     {
         // Construct the parent class
         parent::__construct();
-        $this->load->helper('cookie');
+        $this->load->model('Program_model');
+        $this->load->model('Helper_model');
+        $this->load->model('Packages_model');
     }
 	public function index()
 	{
-		$this->load->view('index');
-	}
-	public function aboutUs()
-	{
-		$this->load->view('about');
-	}
-	public function gallery()
-	{
-		$this->load->view('pages/gallery');
+		$data['programs'] = $this->Helper_model->selectAll("","oc_program_master");
+		$data['trainings'] = $this->Helper_model->selectAll("","oc_training_type");
+		$data['packages'] = $this->Packages_model->getAllPackages(1);
+		//echo "<pre>";print_r($data);exit;
+		$this->load->view('index',$data);
 	}
 }

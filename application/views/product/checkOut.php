@@ -2,8 +2,6 @@
   $data['page'] = "";
   $this->load->view('templates/header',$data);
   $customer_id = $this->session->userdata('customer_id');
-   // print_r($accIn);exit;
-  // echo "<pre>";print_r($userExist[0]['firstname']);exit;
   $total = $this->cart->total();
 ?>
 
@@ -261,7 +259,7 @@
                   </div>
                   <p><strong>Add Comments About Your Order</strong></p>
                   <p>
-                    <textarea name="payment_custom_field" rows="8" class="form-control"></textarea>
+                    <textarea name="comment" rows="8" class="form-control"></textarea>
                   </p>
                   <div class="buttons">
                     <div class="pull-right">I have read and agree to the <a href="#" class="agree"><b>Terms Conditions</b></a>

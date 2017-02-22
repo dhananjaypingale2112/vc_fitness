@@ -254,11 +254,10 @@ class Product extends CI_Controller {
 				'batch_date' => $formData['date'],
 				'comment' => $formData['comment'],
 				'payment_method' => $formData['payment_method'],
-				'payment_custom_field' => $formData['payment_custom_field'],
 				'date_added' => $date,
 				'date_modified' => $date
 				);
-
+			//print_r($data);exit;
 			$insertId = $this->Product_model->insert('oc_order',$data);
 			if (!empty($insertId)) {
 				$historyData = array(
@@ -306,6 +305,7 @@ class Product extends CI_Controller {
 					'value'=> $totalAmt
 			  	);
 				$ans = $this->Product_model->insert('oc_order_total',$orderTotal);
+				//print_r($ans);exit;
 				if (!empty($ans)) {
 						foreach ($this->cart->contents() as $items){
 							$this->Helper_model->delete("oc_cart","cart_id",$items['cartId']);

@@ -9,7 +9,6 @@ class Programs extends CI_Controller {
         $this->load->model('Program_model');
         $this->load->model('Helper_model');
     }
-
 	public function programView($programId="",$trainingId="")
 	{
 		$data['programs'] = $this->Program_model->getAllPrograms();

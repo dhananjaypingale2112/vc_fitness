@@ -171,7 +171,7 @@
           <span class="thumbnail">
             <img src="<?php echo base_url()."public/images/".$value['image'];?>" alt="...">
             <h4><?php echo $value['name'];?></h4>
-            <p>&#x20B9;<?php echo $value['price'];?>---<?php echo $value['customer_id'];?></p>
+            <p>&#x20B9;<?php echo $value['price'];?></p>
                <div class="row">
               <div class="col-md-6 col-sm-6">
               <div class="ratings">

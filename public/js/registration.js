@@ -234,7 +234,6 @@ function verifyOtp()
     } 
     
 }
-
 /*********************/
 function registerUser()
 {
@@ -335,7 +334,7 @@ function loginAction(redirect,itemId,from)
             data:"email="+email+"&password="+password,
             success:function(resp)
             {
-               
+               //alert(resp);;
                if(resp == 1){
                     var msg = 'Login Successfull...!';
                     display_alert('succ',msg);
@@ -355,7 +354,16 @@ function loginAction(redirect,itemId,from)
                         {
                             setInterval(function(){
                             window.location.href = base_url+'packages/custPackagesView/'+itemId;
-                            }, 2000);
+                            }, 2000);  
+                        }
+                        else if(itemId != "" && from == "gallery")
+                        {
+                            alert
+                            // setInterval(function(){
+                            // window.location.href = base_url+'gallery/addGalleryLike/'+itemId;
+                            // }, 2000);
+                            var custId = "User is loged in now";
+                            galleryLike(itemId)
                             
                         }
                         else{
@@ -544,6 +552,22 @@ function addProToWishlist(productId,customer_id)
             {
                 alert("Item added to Wishlist..!");
             }
+        }
+    });
+}
+function galleryLike(galleryId,customer_id)
+{
+    
+    var path = base_url+'gallery/addGalleryLike/'+galleryId;
+    $.ajax({
+        type:"POST",
+        url:path,
+        success:function(resp)
+        {
+            //alert(resp);
+            var path = base_url+'gallery/index';
+            window.location.href = path;
+            
         }
     });
 }
