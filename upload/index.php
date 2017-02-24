@@ -20,6 +20,7 @@ require_once('./vqmod/vqmod.php');
 VQMod::bootup();
 
 // VQMODDED Startup
+//echo DIR_SYSTEM;exit;
 require_once(VQMod::modCheck(DIR_SYSTEM . 'startup.php'));
 
 // Registry

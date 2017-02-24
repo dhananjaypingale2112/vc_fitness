@@ -104,6 +104,29 @@
       </li>
     </ul>
   </li>
+
+
+  <li id="sale"><a class="parent"><i class="fa fa-shopping-cart fa-fw"></i> <span><?php echo $text_package_main; ?></span></a>
+    <ul>
+      <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+      <li><a href="<?php echo $pikinglist; ?>"><?php echo $text_pikinglist; ?></a></li>
+      <li><a href="<?php echo $order_recurring; ?>"><?php echo $text_order_recurring; ?></a></li>
+      <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
+      <li><a class="parent"><?php echo $text_voucher; ?></a>
+        <ul>
+          <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
+          <li><a href="<?php echo $voucher_theme; ?>"><?php echo $text_voucher_theme; ?></a></li>
+        </ul>
+      </li>
+      <li><a class="parent"><?php echo $text_paypal ?></a>
+        <ul>
+          <li><a href="<?php echo $paypal_search ?>"><?php echo $text_paypal_search ?></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+
   <li id="customer"><a class="parent"><i class="fa fa-user fa-fw"></i> <span><?php echo $text_customer; ?></span></a>
     <ul>
       <li><a href="<?php echo $customer; ?>"><?php echo $text_customer; ?></a></li>

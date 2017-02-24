@@ -298,7 +298,7 @@
                               $name = str_replace("rightRound"," )","$name");
                         ?>
                         <tr>
-                          <td class="text-left"><a href="http://demo.proxanttech.com/vnf/index.php?route=product/product&amp;product_id=1458"><?php echo $name;?></a></td>
+                          <td class="text-left"><a href="http://localhost/vc_fitness.git/index.php?route=product/product&amp;product_id=1458"><?php echo $name;?></a></td>
                           <td class="text-left"></td>
                           <td class="text-right"><?php echo $items['qty'] ?></td>
                           <td class="text-right"><?php echo $items['price'];?></td>
