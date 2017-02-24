@@ -12,7 +12,8 @@ class Gallery_model extends CI_Model {
 	}
 
 	public function selectAllgallery($typeId="")
-	{
+	{   
+		
 		$extra = "";
 		if(!empty($typeId))
 		{
