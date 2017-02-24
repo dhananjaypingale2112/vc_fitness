@@ -258,177 +258,44 @@
     </div>
 
 
+
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="recommended_items"><!--recommended_items-->
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
-                <div class="item"> 
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                                    <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
+                <?php 
+                    $count = count($newProduct);
+                     $flag = 0;
+                    for($j=0;$j<4;$j++) { 
+                      
+                      ?>
+                         <div class="<?php echo ($j==0) ?  'item active' : 'item'?>"> 
+                        <?php    $count = count($newProduct);
+                            for($i=0;$i<4;$i++) { 
+                           
+                        ?>
+                          <div class="col-sm-3">
+                            <div class="product-image-wrapper">
+                              <div class="single-products">
+                              
+                                <div class="productinfo text-center">
+                                  <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
+                                  <h2><?php echo $newProduct[$flag]['product_id'];?></h2>
+                                  <p><?php echo $newProduct[$flag]['name']; ?></p>
+                                  <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
+                                </div>
                                 
-                <div class="item active">  
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                           <?php $flag++;}?>
+
                     </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                                    <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                                
-                                
-                                <div class="item">  
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')">
-                                                    <i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                                    <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="http://localhost/vc_new/public/images/products/product-low-res.png" alt="">
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')">
-                                                    <i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
+                <?php }?>
+
               </div>
                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
                 <i class="fa fa-angle-left"></i>
@@ -440,234 +307,9 @@
           </div>
       </div>
       
-       
-    <div class="col-xs-12 col-sm-12 col-md-12">
-      <div class="recommended_items"><!--recommended_items-->
-            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-              <div class="item active"> 
-                <?php 
-                    $count = count($newProduct);
-                    for($i=0;$i<$count;$i+=4) { 
-                ?>
-                
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2><?php echo $newProduct[$i]['product_id'];?></h2>
-                          <p><?php echo $newProduct[$i]['name']; ?></p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2><?php echo $newProduct[$i+1]['product_id'];?></h2>
-                          <p><?php echo $newProduct[$i+1]['name']; ?></p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2><?php echo $newProduct[$i+2]['product_id']; ?></h2>
-                          <p><?php echo $newProduct[$i+2]['name']; ?></p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2><?php echo $newProduct[$i+3]['product_id']; ?></h2>
-                          <p><?php echo $newProduct[$i+3]['name']; ?></p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <?php  } ?>
-                  </div>
-                  <!-- <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                                    <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div> 
-               
-                                
-                <!-- <div class="item">  
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                                    <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                                
-                                
-                                <div class="item">  
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')">
-                                                    <i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                                    <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <img src="<?php echo base_url();?>public/images/products/product-low-res.png" alt="" />
-                                                    <h2>$56</h2>
-                          <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn-cart" onclick="info('Product Added Successfully.')">
-                                                    <i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              </div>
-               <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-                </a>      
-            </div>
-          </div>
-      </div>
+ 
+
+
     </div>
   </div>
                       </section>

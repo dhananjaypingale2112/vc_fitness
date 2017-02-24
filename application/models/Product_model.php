@@ -87,7 +87,7 @@ class Product_model extends CI_Model {
 	}
 	public function selectNewproduct()
 	{
-		return $this->db->query("SELECT pro.*, pro_desc.* FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) ORDER BY date_added DESC LIMIT 20")->result_array();
+		return $this->db->query("SELECT pro.*, pro_desc.* FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) ORDER BY date_added DESC LIMIT 16")->result_array();
 	}
 	public function selectNewproducForMenu()
 	{
