@@ -1,7 +1,4 @@
-<?php 
-    $data['page'] = "aboutUs";
-  $this->load->view('templates/header',$data)
-?> 
+ 
             <!-- header-wrapper ends here -->
             
             <div id="main">
@@ -381,6 +378,3 @@
                 <!-- main-content ends here -->
                 
             </div>
-<?php 
-  $this->load->view('templates/footer')
-?>

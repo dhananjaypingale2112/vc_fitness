@@ -551,7 +551,7 @@
                       </div>
                       <div class="dt-sc-one-third column">
                         <label>Weight in lbs</label>
-                        <input type="text" name="txtlbs1" placeholder="LBS">
+                        <input type="text" name="txtlbs" placeholder="LBS">
                         <div class="dt-sc-clear"></div>
                         <input type="reset" name="subbmi" value="Reset">
                       </div>
@@ -574,10 +574,10 @@
                       <div class="dt-sc-two-third column first">
                         <label>Height in Ft/in</label>
                         <div class="dt-sc-clear"></div>
-                        <input type="text" name="txtfeet1" placeholder="FT">
-                        <input type="text" name="txtinches1" placeholder="IN">
+                        <input type="text" name="txtfeet" placeholder="FT">
+                        <input type="text" name="txtinches" placeholder="IN">
                         <div class="dt-sc-clear"></div>
-                        <input type="submit" name="subbmi1" value="Calculate Bmi">
+                        <input type="submit" name="subbmi" value="Calculate Bmi">
                       </div>
                       <div class="dt-sc-one-third column">
                         <label>Weight in lbs</label>

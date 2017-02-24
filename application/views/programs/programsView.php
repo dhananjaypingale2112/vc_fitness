@@ -1,6 +1,6 @@
 <?php 
-  $data['page'] = "programs";
-  $this->load->view('templates/header',$data);
+  // $data['page'] = "programs";
+  // $this->load->view('templates/header',$data);
 ?>
 <div id="main"> 
       <!-- main-content starts here -->
@@ -74,5 +74,5 @@
     </div>
             
 <?php 
-  $this->load->view('templates/footer')
+  //$this->load->view('templates/footer')
 ?>
