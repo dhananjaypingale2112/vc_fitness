@@ -1,10 +1,4 @@
-<?php 
-  // $data['page'] = "index";
-  // $this->load->view('templates/header',$data)
-?>
-
-
-    <div id="main">
+<div id="main">
       <div id="slider">
          <div id="layerslider_5" class="ls-wp-container layer">
           <video playsinline autoplay muted loop poster="<?php echo base_url();?>public/video/Vinod Channa.mp4" id="bgvid">
@@ -649,7 +643,4 @@
     </div>
     <!-- main-content ends here --> 
   <!-- </div> -->
-  
-<?php 
-  $this->load->view('templates/footer');
-?>
+ 
