@@ -240,20 +240,52 @@
                      <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='programs')?"current_page_item":""?>"> <a href="<?php echo base_url('programs/programView');?>" title=""> Programs </a>
                     <div class="megamenu-child-container">
                       <ul class="sub-menu">
-                      <?php $cnt = 1; foreach ($programs as $key => $value) : if($cnt<5):?>
                         <li>
-                          <div class="widgettitle"> <a href="<?php echo base_url()."Programs/programView/".$value['program_id']?>"><?php echo $value['program_name'] ?></a> </div>
+                          <div class="widgettitle"> <a href="#">Weight Training</a> </div>
                           <ul class="sub-menu">
-                          <?php $listcnt=1; foreach ($trainings as $key => $value1) : if($value1['program_id'] == $value['program_id'] && $listcnt < 5):?>
-                            <li> <a onclick="getTrainingContentFromHeader('<?php echo $value['program_id']?>','<?php echo $value1['training_id']?>')" > <?php echo $value1['training_name'] ?> </a> </li>
-                          <?php $listcnt++; endif; if($listcnt == 5): ?>
+                            <li> <a href="#"> Chest </a> </li>
+                            <li> <a href="#"> Back ,Arms &amp; Legs</a> </li>
+                            <li> <a href="#"> Shoulder </a> </li>
+                            <li> <a href="#"> Abdominal </a> </li>
                             <li> <a href="#"> More... </a> </li>
-                          <?php $listcnt++; endif;endforeach; ?>
                           </ul>
-                          <a class="dt-menu-expand">+</a> 
-                        </li>
-                      <?php $cnt++; endif; endforeach; ?>
-                        
+                          <a class="dt-menu-expand">+</a> </li>
+                        <li>
+                          <div class="widgettitle"> <a href="#">Gadgets Training</a> </div>
+                          <ul class="sub-menu">
+                            <li> <a href="#"> Bosu Ball Training </a> </li>
+                            <li> <a href="#"> Medical Ball Workout </a> </li>
+                            <li> <a href="#"> TRX Band Workout </a> </li>
+                            <li> <a href="#"> Ladder Workout </a> </li>
+                            <li> <a href="#"> More... </a> </li>
+                          </ul>
+                          <a class="dt-menu-expand">+</a> </li>
+                        <li>
+                          <div class="widgettitle"> <a href="#">Functional Training</a> </div>
+                          <ul class="sub-menu">
+                            <li> <a href="#"> Body Weight </a> </li>
+                            <li> <a href="#"> Width Training </a> </li>
+                            <li> <a href="#"> More... </a> </li>
+                           </ul>
+                          <a class="dt-menu-expand">+</a> </li>
+                         <li>
+                          <div class="widgettitle"> <a href="#">Specific Specialization</a> </div>
+                          <ul class="sub-menu">
+                            <li> <a href="#"> Hand Stand </a> </li>
+                            <li> <a href="#"> Flip </a> </li>
+                            <li> <a href="#"> Monkey Jump </a> </li>
+                            <li> <a href="#"> Muscle </a> </li>
+                            <li> <a href="#"> More...</a> </li>
+                          </ul>
+                          <a class="dt-menu-expand">+</a> </li>
+                             
+                        <!-- <li class="fulwidth-image-link menu-item-fullwidth">
+                          <ul class="sub-menu">
+                            <li><span class="nolink-menu"></span>
+                              <div class="dt-megamenu-custom-content"><img src="<?php echo base_url();?>public/images/mega-menu-img.png" alt="" title=""></div>
+                            </li>
+                          </ul>
+                        </li> -->
                       </ul>
                     </div>
                     <a class="dt-menu-expand">+</a> </li>
@@ -266,29 +298,70 @@
                         <li class="menu-item-fullwidth fill-four-columns">
                           <div class="menu-item-widget-area-container">
                             <ul>
-                            <?php 
-                            $cnt = 1;
-                                    foreach ($packages as $key => $value):
-                                      if($cnt <5):
-                                ?>
                               <li class="widget">
                                 <div class="dt-sc-programs">
-                                  <div class="dt-sc-pro-thumb"> <a href="package-detail.html"><img src="<?php echo base_url().'public/images/'.$value['package_img']?>" alt="" title=""></a>
+                                  <div class="dt-sc-pro-thumb"> <a href="package-detail.html"><img src="<?php echo base_url();?>public/images/event1.jpg" alt="" title=""></a>
                                     <div class="programs-overlay">
                                       <div class="dt-sc-pro-title">
-                                        <h3><?php echo $value['package_name'] ?></h3>
-                                        <span><?php echo $value['package_details'] ?></span> </div>
+                                        <h3>Muscle Build Pro</h3>
+                                        <span>1 yr training program</span> </div>
                                     </div>
                                   </div>
                                   <div class="dt-sc-pro-detail">
                                     <div class="dt-sc-pro-price">
-                                      <p class="pro-price-content"> <sup>&#x20B9;</sup><?php echo round($value['package_amount'])?>/<span>Per Months</span> </p>
-                                      <a class="dt-sc-button small" data-hover="Enroll Now"  onclick="insertPackage('<?php echo $value['package_id']?>','<?php echo $customer_id ?>')">Enroll Now</a> </div>
+                                      <p class="pro-price-content"> <sup>$</sup> 89.99/<span>6 Months</span> </p>
+                                      <a class="dt-sc-button small" href="#" data-hover="Enroll Now">Enroll Now</a> </div>
                                   </div>
                                 </div>
                               </li>
-                            <?php $cnt++; endif; endforeach; ?>
-                              
+                              <li class="widget">
+                                <div class="dt-sc-programs">
+                                  <div class="dt-sc-pro-thumb"> <a href="package-detail.html"><img src="<?php echo base_url();?>public/images/event3.jpg" alt="" title=""></a>
+                                    <div class="programs-overlay">
+                                      <div class="dt-sc-pro-title">
+                                        <h3>Muscle Build Pro</h3>
+                                        <span>1 yr training program</span> </div>
+                                    </div>
+                                  </div>
+                                  <div class="dt-sc-pro-detail">
+                                    <div class="dt-sc-pro-price">
+                                      <p class="pro-price-content"> <sup>$</sup> 89.99/<span>6 Months</span> </p>
+                                      <a class="dt-sc-button small" href="#" data-hover="Enroll Now">Enroll Now</a> </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="widget">
+                                <div class="dt-sc-programs">
+                                  <div class="dt-sc-pro-thumb"> <a href="package-detail.html"><img src="<?php echo base_url();?>public/images/event2.jpg" alt="" title=""></a>
+                                    <div class="programs-overlay">
+                                      <div class="dt-sc-pro-title">
+                                        <h3>Muscle Build Pro</h3>
+                                        <span>1 yr training program</span> </div>
+                                    </div>
+                                  </div>
+                                  <div class="dt-sc-pro-detail">
+                                    <div class="dt-sc-pro-price">
+                                      <p class="pro-price-content"> <sup>$</sup> 89.99/<span>6 Months</span> </p>
+                                      <a class="dt-sc-button small" href="#" data-hover="Enroll Now">Enroll Now</a> </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="widget">
+                                <div class="dt-sc-programs">
+                                  <div class="dt-sc-pro-thumb"> <a href="package-detail.html"><img src="<?php echo base_url();?>public/images/event4.jpg" alt="" title=""></a>
+                                    <div class="programs-overlay">
+                                      <div class="dt-sc-pro-title">
+                                        <h3>Muscle Build Pro</h3>
+                                        <span>1 yr training program</span> </div>
+                                    </div>
+                                  </div>
+                                  <div class="dt-sc-pro-detail">
+                                    <div class="dt-sc-pro-price">
+                                      <p class="pro-price-content"> <sup>$</sup> 89.99/<span>6 Months</span> </p>
+                                      <a class="dt-sc-button small" href="#" data-hover="Enroll Now">Enroll Now</a> </div>
+                                  </div>
+                                </div>
+                              </li>
                             </ul>
                           </div>
                         </li>
@@ -299,33 +372,17 @@
                     <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='productspage')?"current_page_item":""?>"> <a href="<?php echo base_url();?>product/productView" title=""> Fitness Products </a>
                     <div class="megamenu-child-container">
                       <ul class="sub-menu">
-                      <?php  foreach ($cat as $key12 => $value) :
-                              $catCnt = 1;
-                                foreach ($cat as $key1 => $value1):
-                                  if($value1['parent_id'] != 0 && $catCnt<4):
-                        ?>
                         <li>
-                          <div class="widgettitle"> <a href="#"> <?php echo $value1['name'];?><?php echo $catCnt;?> </a> </div>
+                          <div class="widgettitle"> <a href="#"> II Column </a> </div>
                           <ul class="sub-menu">
-                        <?php $procnt=1; 
-                              foreach ($product as $key => $value3) : 
-                                if($value3['category_id'] == $value1['category_id'] && $procnt < 5):
-                        ?>
-                            <li> <a href="gallery-ii-col-without-sidebar.html"> <?php echo $value3['name'] ?> </a> </li>
-                        <?php $procnt++; 
-                              endif; 
-                              if($procnt == 5): 
-                        ?>
-                          <li> <a href="#"> More... </a> </li>
-                          <?php $procnt++; endif;endforeach; ?>
+                            <li> <a href="gallery-ii-col-without-sidebar.html"> Without Sidebar </a> </li>
+                            <li> <a href="gallery-ii-col-with-left-sidebar.html"> With Left Sidebar </a> </li>
+                            <li> <a href="gallery-ii-col-with-right-sidebar.html"> With Right Sidebar </a> </li>
+                            <li> <a href="gallery-ii-col-with-both-sidebar.html"> With Both Sidebar </a> </li>
+                            <li> <a href="gallery-ii-col-fullwidth.html"> Fullwidth </a> </li>
                           </ul>
-                          <a class="dt-menu-expand">+</a> 
-                        </li>
-                      <?php $catCnt++; 
-                            endif; endforeach; break;
-                            endforeach; 
-                      ?>
-                        <!-- <li>
+                          <a class="dt-menu-expand">+</a> </li>
+                        <li>
                           <div class="widgettitle"> <a href="#"> III Column </a> </div>
                           <ul class="sub-menu">
                             <li> <a href="gallery-iii-col-without-sidebar.html"> Without Sidebar </a> </li>
@@ -334,8 +391,8 @@
                             <li> <a href="gallery-iii-col-with-both-sidebar.html"> With Both Sidebar </a> </li>
                             <li> <a href="gallery-iii-col-fullwidth.html"> Fullwidth </a> </li>
                           </ul>
-                          <a class="dt-menu-expand">+</a> </li> -->
-                        <!-- <li>
+                          <a class="dt-menu-expand">+</a> </li>
+                        <li>
                           <div class="widgettitle"> <a href="#"> IV Column </a> </div>
                           <ul class="sub-menu">
                             <li> <a href="gallery-iv-col-without-sidebar.html"> Without Sidebar </a> </li>
@@ -344,7 +401,7 @@
                             <li> <a href="gallery-iv-col-with-both-sidebar.html"> With Both Sidebar </a> </li>
                             <li> <a href="gallery-iv-col-fullwidth.html"> Fullwidth </a> </li>
                           </ul>
-                          <a class="dt-menu-expand">+</a> </li> -->
+                          <a class="dt-menu-expand">+</a> </li>
                         <li> <img src="<?php echo base_url();?>public/images/menu-img.png" alt="" title=""> 
                         <a href="#" class="dt-sc-button small" data-hover="Fitness Facts">Fitness Facts</a> </li>
                       </ul>

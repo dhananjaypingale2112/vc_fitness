@@ -1,6 +1,6 @@
 <?php 
-  $data['page'] = "index";
-  $this->load->view('templates/header',$data)
+  // $data['page'] = "index";
+  // $this->load->view('templates/header',$data)
 ?>
 
 
