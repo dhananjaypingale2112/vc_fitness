@@ -11,11 +11,12 @@ class Programs extends CI_Controller {
         $this->load->model('Packages_model');
         $this->load->model('Product_model');
 
-        $this->data['programs'] = $this->Helper_model->selectAll("","oc_program_master");
-		$this->data['trainings'] = $this->Helper_model->selectAll("","oc_training_type");
-		$this->data['packages'] = $this->Packages_model->getAllPackages(1);
-		$this->data['cat'] = $this->Product_model->selectCategory();
-		$this->data['product'] = $this->Product_model->selectNewproducForMenu();
+        $this->data['menu_programs'] = $this->Helper_model->selectAll("","oc_program_master");
+		$this->data['menu_trainings'] = $this->Helper_model->selectAll("","oc_training_type");
+		$this->data['menu_packages'] = $this->Packages_model->getAllPackages(1);
+		$this->data['menu_cat'] = $this->Product_model->selectCategory();
+		$this->data['menu_product'] = $this->Product_model->selectNewproducForMenu();
+		$this->data['customer_id'] = $this->session->userdata('customer_id');
     }
 	public function programView($programId="",$trainingId="")
 	{

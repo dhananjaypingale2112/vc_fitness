@@ -1,12 +1,4 @@
-<?php 
-  $data['page'] = "contactpage";
-  $this->load->view('templates/header',$data);
-  
-?>
-<!-- header-wrapper ends here -->
-            
- 
-    <div id="main">
+<div id="main">
                 <!-- main-content starts here -->
                 <div id="main-content">
                     <section id="primary" class="content-full-width">
@@ -18,7 +10,7 @@
                             
                                <h3 class="border-title"> <span> Contact Us </span></h3>
                                 <div id="ajax_contact_msg"></div>
-                                <form name="frmcontact" action="http://wedesignthemes.com/html/fitness/php/send.php" method="post" id="contact-form" class="type2">
+                                <form name="frmcontact" action="<?php echo base_url('ContactUs/sendContactUsEmail');?>" method="post" id="contact-form" class="type2">
                                     <div class="dt-sc-one-column column first">
                                         <div class="dt-sc-one-half column first">
                                             <input type="text" name="txtname" placeholder="Enter name..." required>
@@ -94,6 +86,3 @@
                 </div>
                 <!-- main-content ends here -->
             </div>
-<?php 
-  $this->load->view('templates/footer')
-?>

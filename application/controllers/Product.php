@@ -6,11 +6,21 @@ class Product extends CI_Controller {
 	function __construct()
     {
         parent::__construct();
-        $this->load->model('Product_model');
+        $this->load->model('Program_model');
         $this->load->model('Helper_model');
+        $this->load->model('Packages_model');
+        $this->load->model('Product_model');
+
+        $this->data['menu_programs'] = $this->Helper_model->selectAll("","oc_program_master");
+		$this->data['menu_trainings'] = $this->Helper_model->selectAll("","oc_training_type");
+		$this->data['menu_packages'] = $this->Packages_model->getAllPackages(1);
+		$this->data['menu_cat'] = $this->Product_model->selectCategory();
+		$this->data['menu_product'] = $this->Product_model->selectNewproducForMenu();
+		$this->data['customer_id'] = $this->session->userdata('customer_id');
     }
 	public function productView($catId="",$pageno = "")
 	{
+		$data = $this->data;
 		$data['cat'] = $this->Product_model->selectCategory();
 		
 		if(empty($catId)){
@@ -48,19 +58,17 @@ class Product extends CI_Controller {
 		$data['catId'] = $catId;
 		$data['pageno'] = $pageno;
 
-		// $id = $this->session->userdata('customer_id');
-		// if($id)
-		// {
-		// 	$condition = array('customer_id' => $id);
-		// 	$data['wishlistItem'] = $this->Product_model->select('product_id','oc_customer_wishlist',$condition);
-		// }
-		//print_r($data['wishlistItem']);exit;
 		$data['newProduct'] = $this->Product_model->selectNewproduct();
-		//echo "<pre>";print_r($data['products']);exit;
-		$this->load->view('product/productList',$data);
+
+		
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
+		$this->load->view('product/productList');
+		$this->load->view('templates/footer');
 	}
 	public function allProductView($catId="",$pageno = "")
 	{
+		$data = $this->data;
 		
 		$where = array('parent_id' => $catId);
 		$data['cat'] = $this->Product_model->select("","oc_category",$where);
@@ -95,20 +103,37 @@ class Product extends CI_Controller {
 		$data['pageno'] = $pageno;
 		$data['cat'] = $this->Product_model->selectCategory();
 		$data['newProduct'] = $this->Product_model->selectNewproduct();
+
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
 		$this->load->view('product/productList',$data);
+		$this->load->view('templates/footer');
 	}
 	public function productDetails($proId="")
 	{
+		$data = $this->data;	
+
 		$data['cat'] = $this->Product_model->selectCategory();
 		$data['products'] = $this->Product_model->selectSingelProduct($proId);
+
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
 		$this->load->view('product/productDetails',$data);
+		$this->load->view('templates/footer');
 	}
 	public function cartView()
 	{ 
+		$data = $this->data;
+
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
 		$this->load->view('product/cartView');
+		$this->load->view('templates/footer');
 	}
 	public function checkOut($state="")
 	{
+		$data = $this->data;
+
 		$data['accIn'] = $state;
 		$id = $this->session->userdata('customer_id');
 		if(!empty($id))
@@ -121,7 +146,11 @@ class Product extends CI_Controller {
 			}
 			$data['userExist'] = $this->Product_model->selectSingleUser($id);
 		}
+
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
 		$this->load->view('product/checkOut',$data);
+		$this->load->view('templates/footer');
 	}
 	public function addToCart()
 	{
@@ -329,7 +358,12 @@ class Product extends CI_Controller {
 	}
 	public function orderSuccess()
 	{
+		$data = $this->data;
+		
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
 		$this->load->view('product/orderMsg');
+		$this->load->view('templates/footer');
 	}
 	public function updateCart()
 	{
@@ -373,6 +407,8 @@ class Product extends CI_Controller {
 	/*********  wishlist        *********/
 	public function wishlistView()
 	{ 
+		$data = $this->data;
+
 		$customer_id = $this->session->userdata('customer_id');
 		$condition = array('customer_id' => $customer_id);
 		$product_id = $this->Helper_model->select('product_id','oc_customer_wishlist',$condition);
@@ -380,7 +416,11 @@ class Product extends CI_Controller {
 		foreach ($product_id as $key => $value) {
 			$data['wishlist'][$key] = $this->Product_model->selectSingelProduct($value['product_id']);
 		}
+
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
 		$this->load->view('product/wishlistView',$data);
+		$this->load->view('templates/footer');
 	}
 	public function addToWishlist()
 	{

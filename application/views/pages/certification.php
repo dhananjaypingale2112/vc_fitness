@@ -1,9 +1,3 @@
-<?php 
-  $data['page'] = "";
-  $this->load->view('templates/header',$data);
-?>
-<!-- header-wrapper ends here -->
-            
 <div id="main">
     <!-- main-content starts here -->
     <div id="main-content">
@@ -54,6 +48,3 @@
         </div>
     <!-- main-content ends here -->
 </div>
-<?php 
-  $this->load->view('templates/footer')
-?>

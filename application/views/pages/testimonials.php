@@ -1,7 +1,3 @@
-<?php 
-  $data['page'] = "successStories";
-  $this->load->view('templates/header',$data);
-?>
 <div id="main"> 
       <!-- main-content starts here -->
       <div id="main-content">
@@ -152,6 +148,3 @@ I am very proud to be fitness expert of Anant.</p>
       </div>
       <!-- main-content ends here --> 
     </div>
-<?php 
-  $this->load->view('templates/footer')
-?>

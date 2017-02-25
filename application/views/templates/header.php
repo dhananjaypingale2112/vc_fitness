@@ -240,11 +240,11 @@
                      <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='programs')?"current_page_item":""?>"> <a href="<?php echo base_url('programs/programView');?>" title=""> Programs </a>
                     <div class="megamenu-child-container">
                       <ul class="sub-menu">
-                      <?php $cnt = 1; foreach ($programs as $key => $value) : if($cnt<5):?>
+                      <?php $cnt = 1; foreach ($menu_programs as $key => $value) : if($cnt<5):?>
                         <li>
                           <div class="widgettitle"> <a href="<?php echo base_url()."Programs/programView/".$value['program_id']?>"><?php echo $value['program_name'] ?></a> </div>
                           <ul class="sub-menu">
-                          <?php $listcnt=1; foreach ($trainings as $key => $value1) : if($value1['program_id'] == $value['program_id'] && $listcnt < 5):?>
+                          <?php $listcnt=1; foreach ($menu_trainings as $key => $value1) : if($value1['program_id'] == $value['program_id'] && $listcnt < 5):?>
                             <li> <a onclick="getTrainingContentFromHeader('<?php echo $value['program_id']?>','<?php echo $value1['training_id']?>')" > <?php echo $value1['training_name'] ?> </a> </li>
                           <?php $listcnt++; endif; if($listcnt == 5): ?>
                             <li> <a href="#"> More... </a> </li>
@@ -268,7 +268,7 @@
                             <ul>
                             <?php 
                             $cnt = 1;
-                                    foreach ($packages as $key => $value):
+                                    foreach ($menu_packages as $key => $value):
                                       if($cnt <5):
                                 ?>
                               <li class="widget">
@@ -299,16 +299,16 @@
                     <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='productspage')?"current_page_item":""?>"> <a href="<?php echo base_url();?>product/productView" title=""> Fitness Products </a>
                     <div class="megamenu-child-container">
                       <ul class="sub-menu">
-                      <?php  foreach ($cat as $key12 => $value) :
+                      <?php  foreach ($menu_cat as $key12 => $value) :
                               $catCnt = 1;
-                                foreach ($cat as $key1 => $value1):
+                                foreach ($menu_cat as $key1 => $value1):
                                   if($value1['parent_id'] != 0 && $catCnt<4):
                         ?>
                         <li>
                           <div class="widgettitle"> <a href="#"> <?php echo $value1['name'];?><?php echo $catCnt;?> </a> </div>
                           <ul class="sub-menu">
                         <?php $procnt=1; 
-                              foreach ($product as $key => $value3) : 
+                              foreach ($menu_product as $key => $value3) : 
                                 if($value3['category_id'] == $value1['category_id'] && $procnt < 5):
                         ?>
                             <li> <a href="gallery-ii-col-without-sidebar.html"> <?php echo $value3['name'] ?> </a> </li>

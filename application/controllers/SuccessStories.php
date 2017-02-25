@@ -3,24 +3,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SuccessStories extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Program_model');
+        $this->load->model('Helper_model');
+        $this->load->model('Packages_model');
+        $this->load->model('Product_model');
+
+        $this->data['menu_programs'] = $this->Helper_model->selectAll("","oc_program_master");
+		$this->data['menu_trainings'] = $this->Helper_model->selectAll("","oc_training_type");
+		$this->data['menu_packages'] = $this->Packages_model->getAllPackages(1);
+		$this->data['menu_cat'] = $this->Product_model->selectCategory();
+		$this->data['menu_product'] = $this->Product_model->selectNewproducForMenu();
+		$this->data['customer_id'] = $this->session->userdata('customer_id');
+    }
 
 	public function successStoriesView()
 	{
+		$data = $this->data;
+
+		$data['page'] = "";
+		$this->load->view('templates/header',$data);
 		$this->load->view('pages/successStories');
+		$this->load->view('templates/footer');
 	}
 }

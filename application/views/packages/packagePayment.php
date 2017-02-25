@@ -1,9 +1,3 @@
-<?php 
-  $data['page'] = "packagespage";
-  $this->load->view('templates/header',$data);
- $customer_id = $this->session->userdata('customer_id');
-?>
-
 <div id="main">
                 <!-- main-content starts here -->
                 <div id="main-content">
@@ -23,6 +17,3 @@
 				</div>
                 <!-- main-content ends here -->
             </div>
-<?php 
-  $this->load->view('templates/footer')
-?>

@@ -1,9 +1,3 @@
-<?php 
-  $data['page'] = "packagespage";
-  $this->load->view('templates/header',$data);
- $customer_id = $this->session->userdata('customer_id');
-?>
-
 <div id="main"> 
   <div id="main-content">
     <section id="primary" class="content-full-width">
@@ -94,7 +88,3 @@
      </section>
   </div>
 </div>
-
-<?php 
-  $this->load->view('templates/footer')
-?>

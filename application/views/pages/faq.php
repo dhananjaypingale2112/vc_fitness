@@ -1,9 +1,4 @@
-<?php 
-  $data['page'] = "";
-  $this->load->view('templates/header',$data);
-?>
-<!-- header-wrapper ends here -->
-  <div id="main">
+<div id="main">
                 <!-- main-content starts here -->
                 <div id="main-content">
                     <section id="primary" class="content-full-width">
@@ -103,9 +98,4 @@
                         <!-- support starts here -->
                         <div class="dt-sc-hr-invisible-large"></div>
                     </section>
-                </div>            
- 
-   
-<?php 
-  $this->load->view('templates/footer')
-?>
+                </div>  

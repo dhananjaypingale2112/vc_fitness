@@ -610,11 +610,14 @@ jQuery(document).ready(function($){
 			var fet = $('input[name="txtfeet"]').val();
 			var inc = $('input[name="txtinches"]').val();
 			var tinc = ( parseInt(fet) * 12 ) + parseInt(inc);
+
+			alert(fet);alert(inc);alert(tinc);
 			
 			var lbs = $('input[name="txtlbs"]').val();
 			
+			alert(lbs);
 			var bmi = ( parseFloat(lbs) / (tinc * tinc) ) * 703;
-			
+			alert(bmi);
 			$('input[name="txtbmi"]').val(parseFloat(bmi).toFixed(1));
 		}
 		return false;

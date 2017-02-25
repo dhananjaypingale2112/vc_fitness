@@ -9,17 +9,20 @@ jQuery(document).ready(function($){
 			var action = $(This).attr('action');
 
 			var data_value = unescape($(This).serialize());
+			alert(action);
+			//alert(data_value);
 			$.ajax({
 				 type: "POST",
 				 url:action,
 				 data: data_value,
-				 error: function (xhr, status, error) {
-					 confirm('The page save failed.');
-				   },
+				 // error: function (xhr, status, error) {
+					//  confirm('The page save failed.');
+				 //   },
 				  success: function (response) {
-					$('#ajax_contact_msg').html(response);
-					$('#ajax_contact_msg').slideDown('slow');
-					if (response.match('success') != null) $(This).slideUp('slow');
+				  	alert(response);
+					// $('#ajax_contact_msg').html(response);
+					// $('#ajax_contact_msg').slideDown('slow');
+					// if (response.match('success') != null) $(This).slideUp('slow');
 				 }
 			});
 		}

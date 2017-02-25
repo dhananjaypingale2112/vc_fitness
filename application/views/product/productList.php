@@ -1,7 +1,4 @@
 <?php 
-  $data['page'] = "productspage";
-  $this->load->view('templates/header',$data);
-  @$customer_id = $this->session->userdata('customer_id');
   $str = $_SERVER['REQUEST_URI'];
   $check = stripos($str,"allProductView");
   if($check)
@@ -321,6 +318,3 @@
       </div>
       <!-- main-content ends here --> 
     </div>
-<?php 
-  $this->load->view('templates/footer');
-?>

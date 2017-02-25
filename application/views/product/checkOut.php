@@ -1,7 +1,4 @@
-<?php 
-  $data['page'] = "";
-  $this->load->view('templates/header',$data);
-  $customer_id = $this->session->userdata('customer_id');
+<?php
   $total = $this->cart->total();
 ?>
 
@@ -348,6 +345,3 @@
   </div>
   <!-- main-content ends here --> 
 </div>
-<?php 
-  $this->load->view('templates/footer')
-?>

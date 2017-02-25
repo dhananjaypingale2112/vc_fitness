@@ -1,7 +1,3 @@
-<?php 
-  // $data['page'] = "programs";
-  // $this->load->view('templates/header',$data);
-?>
 <div id="main"> 
       <!-- main-content starts here -->
       <div id="main-content">
@@ -46,33 +42,16 @@
                       </div>
                     </div>
 
-
-
   <!--****************************************************-->
-
-
-
-
-
-
-
-
-
-
                   </div>
                   
                 </div>
               </div>
             </div>
-          </div>
-          
+          </div>         
           <!-- support starts here -->
           <div class="dt-sc-hr-invisible-large"></div>
         </section>
       </div>
       <!-- main-content ends here --> 
     </div>
-            
-<?php 
-  //$this->load->view('templates/footer')
-?>

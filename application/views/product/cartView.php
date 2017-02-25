@@ -1,8 +1,5 @@
-<?php 
-  $data['page'] = "";
-  $this->load->view('templates/header',$data);
+<?php
   $total = $this->cart->total();
-  //print_r($total);
 ?>
 <div id="main"> 
       <!-- main-content starts here -->
@@ -167,6 +164,3 @@
       </div>
       <!-- main-content ends here --> 
     </div>
-<?php 
-  $this->load->view('templates/footer');
-?>
