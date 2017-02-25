@@ -9,7 +9,7 @@
                             <div class="column dt-sc-two-third  space first">
                             
                                <h3 class="border-title"> <span> Contact Us </span></h3>
-                                <div id="ajax_contact_msg"></div>
+                                <div id="alert_msg"></div>
                                 <form name="frmcontact" action="<?php echo base_url('ContactUs/sendContactUsEmail');?>" method="post" id="contact-form" class="type2">
                                     <div class="dt-sc-one-column column first">
                                         <div class="dt-sc-one-half column first">

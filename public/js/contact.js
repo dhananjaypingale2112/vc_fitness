@@ -9,8 +9,6 @@ jQuery(document).ready(function($){
 			var action = $(This).attr('action');
 
 			var data_value = unescape($(This).serialize());
-			alert(action);
-			//alert(data_value);
 			$.ajax({
 				 type: "POST",
 				 url:action,
@@ -19,11 +17,25 @@ jQuery(document).ready(function($){
 					//  confirm('The page save failed.');
 				 //   },
 				  success: function (response) {
-				  	alert(response);
-					// $('#ajax_contact_msg').html(response);
-					// $('#ajax_contact_msg').slideDown('slow');
-					// if (response.match('success') != null) $(This).slideUp('slow');
-				 }
+				  	//alert(response);
+				  	if(response == 0)
+				  	{
+				  		var msg = 'Something goes wrong..!';
+                    	alert_msg += '<div class="alert alert-danger" role="alert" style="padding: 5px;">';
+        				alert_msg += '<span style="text-align:center"><strong>'+msg+'</strong></span></div>';
+				  	}
+				  	else
+				  	{
+				  		var msg = 'Thank You for contact.. We will reply you shortly..!';
+                    	alert_msg += '<div class="alert alert-success" role="alert" style="padding: 0px;">';
+        				alert_msg += '<span style="text-align:center"><strong>'+msg+'</strong></span></div>';
+				  	}
+				  	$("#alert_msg").html(alert_msg);
+					    setTimeout(function(){
+					        $("#alert_msg").html("");
+					        window.location.href = base_url+'ContactUs/contactUsView';      
+					    },4000);
+				 	}
 			});
 		}
 		return false;
