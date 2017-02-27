@@ -38,10 +38,12 @@ class Product_model extends CI_Model {
 	public function selectProduct($catId,$limit)
 	{
 		return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName, ROUND(AVG(rev.rating)) as rating, wish.customer_id FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) LEFT JOIN oc_review rev ON(pro.product_id = rev.product_id) LEFT JOIN oc_customer_wishlist wish ON(wish.product_id = pro.product_id) WHERE pro_cat.category_id = $catId GROUP BY pro.product_id $limit")->result_array();
+	}
+	public function selectAllCatProduct($extra="",$limit)
+	{
+		return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName, ROUND(AVG(rev.rating)) as rating, wish.customer_id FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) LEFT JOIN oc_review rev ON(pro.product_id = rev.product_id) LEFT JOIN oc_customer_wishlist wish ON(wish.product_id = pro.product_id) $extra GROUP BY pro.product_id $limit")->result_array();
 
-		//return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName, wish.customer_id FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) LEFT JOIN oc_customer_wishlist wish ON(wish.product_id = pro.product_id) WHERE pro_cat.category_id = $catId ORDER BY pro.product_id $limit")->result_array();
-		
-		//return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id)  WHERE pro_cat.category_id = $catId $limit")->result_array();
+		//return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) $extra $limit")->result_array();
 	}
 	public function selectSingelProduct($proId)
 	{
@@ -81,10 +83,7 @@ class Product_model extends CI_Model {
 	{
 		return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) WHERE pro_cat.category_id = $catId")->result_array();
 	}
-	public function selectAllCatProduct($extra,$limit)
-	{
-		return $this->db->query("SELECT pro.*, pro_desc.*, pro_cat.*,cat_desc.name as catName FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) JOIN oc_product_to_category pro_cat ON(pro.product_id = pro_cat.product_id) JOIN oc_category_description cat_desc ON(pro_cat.category_id = cat_desc.category_id) WHERE $extra $limit")->result_array();
-	}
+	
 	public function selectNewproduct()
 	{
 		return $this->db->query("SELECT pro.*, pro_desc.* FROM oc_product pro JOIN oc_product_description pro_desc ON(pro.product_id = pro_desc.product_id) ORDER BY date_added DESC LIMIT 16")->result_array();

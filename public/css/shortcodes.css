@@ -69,7 +69,14 @@
 	/*----*****---- << Buttons >> ----*****----*/
 	.dt-sc-button { font-size:16px; padding:8px 15px; line-height:normal; display:inline-block; margin:10px 0px 0px; cursor:pointer; outline:none; position:relative; z-index:1; border-radius:0px; color:#ffffff; position:relative; background-repeat:no-repeat; text-transform:uppercase; font-weight:bold; }
 	a.dt-sc-button { -webkit-transition: -webkit-transform 0.3s; -moz-transition: -moz-transform 0.3s; transition: transform 0.3s; -webkit-transform-origin: 50% 0; -moz-transform-origin: 50% 0; transform-origin: 50% 0; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d; }	
-	.csstransforms3d a.dt-sc-button::before { position: absolute; top: 100%; left: 0; width: 100%; height: 100%; content: attr(data-hover); -webkit-transition: background 0.3s; -moz-transition: background 0.3s; transition: background 0.3s; -webkit-transform: rotateX(-90deg); -moz-transform: rotateX(-90deg); transform: rotateX(-90deg); -webkit-transform-origin: 50% 0; -moz-transform-origin: 50% 0; transform-origin: 50% 0; border-radius:0px; text-align:center; background-size:100%; }
+	.csstransforms3d a.dt-sc-button::before 
+	{ position: absolute; top: 100%; left: 0; width: 100%; 
+		height: 100%; content: attr(data-hover); -webkit-transition: background 0.3s; 
+		-moz-transition: background 0.3s; transition: background 0.3s;
+		 -webkit-transform: rotateX(-90deg); -moz-transform: rotateX(-90deg);
+		  transform: rotateX(-90deg); -webkit-transform-origin: 50% 0; 
+		  -moz-transform-origin: 50% 0; transform-origin: 50% 0; border-radius:0px;
+		   text-align:center; background-size:100%; }
 		
 	.dt-sc-button.small::before { line-height:38px; }
 	.dt-sc-button.medium::before { line-height:47px; }

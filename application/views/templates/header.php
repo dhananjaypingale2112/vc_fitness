@@ -247,7 +247,7 @@
                           <?php $listcnt=1; foreach ($menu_trainings as $key => $value1) : if($value1['program_id'] == $value['program_id'] && $listcnt < 5):?>
                             <li> <a onclick="getTrainingContentFromHeader('<?php echo $value['program_id']?>','<?php echo $value1['training_id']?>')" > <?php echo $value1['training_name'] ?> </a> </li>
                           <?php $listcnt++; endif; if($listcnt == 5): ?>
-                            <li> <a href="#"> More... </a> </li>
+                            <li> <a href="<?php echo base_url('programs/programView');?>"> More... </a> </li>
                           <?php $listcnt++; endif;endforeach; ?>
                           </ul>
                           <a class="dt-menu-expand">+</a> 
@@ -283,7 +283,7 @@
                                   <div class="dt-sc-pro-detail">
                                     <div class="dt-sc-pro-price">
                                       <p class="pro-price-content"> <sup>&#x20B9;</sup><?php echo round($value['package_amount'])?>/<span>Per Months</span> </p>
-                                      <a class="dt-sc-button small" data-hover="Enroll Now"  onclick="insertPackage('<?php echo $value['package_id']?>','<?php echo $customer_id ?>')">Enroll Now</a> </div>
+                                      <a class="dt-sc-button  small" data-hover="Enroll Now"  onclick="insertPackage('<?php echo $value['package_id']?>','<?php echo $customer_id ?>')">Enroll Now</a> </div>
                                   </div>
                                 </div>
                               </li>
@@ -316,7 +316,7 @@
                               endif; 
                               if($procnt == 5): 
                         ?>
-                          <li> <a href="#"> More... </a> </li>
+                          <li> <a href="<?php echo base_url();?>product/productView"> More... </a> </li>
                           <?php $procnt++; endif;endforeach; ?>
                           </ul>
                           <a class="dt-menu-expand">+</a> 
@@ -325,26 +325,6 @@
                             endif; endforeach; break;
                             endforeach; 
                       ?>
-                        <!-- <li>
-                          <div class="widgettitle"> <a href="#"> III Column </a> </div>
-                          <ul class="sub-menu">
-                            <li> <a href="gallery-iii-col-without-sidebar.html"> Without Sidebar </a> </li>
-                            <li> <a href="gallery-iii-col-with-left-sidebar.html"> With Left Sidebar </a> </li>
-                            <li> <a href="gallery-iii-col-with-right-sidebar.html"> With Right Sidebar </a> </li>
-                            <li> <a href="gallery-iii-col-with-both-sidebar.html"> With Both Sidebar </a> </li>
-                            <li> <a href="gallery-iii-col-fullwidth.html"> Fullwidth </a> </li>
-                          </ul>
-                          <a class="dt-menu-expand">+</a> </li> -->
-                        <!-- <li>
-                          <div class="widgettitle"> <a href="#"> IV Column </a> </div>
-                          <ul class="sub-menu">
-                            <li> <a href="gallery-iv-col-without-sidebar.html"> Without Sidebar </a> </li>
-                            <li> <a href="gallery-iv-col-with-left-sidebar.html"> With Left Sidebar </a> </li>
-                            <li> <a href="gallery-iv-col-with-right-sidebar.html"> With Right Sidebar </a> </li>
-                            <li> <a href="gallery-iv-col-with-both-sidebar.html"> With Both Sidebar </a> </li>
-                            <li> <a href="gallery-iv-col-fullwidth.html"> Fullwidth </a> </li>
-                          </ul>
-                          <a class="dt-menu-expand">+</a> </li> -->
                         <li> <img src="<?php echo base_url();?>public/images/menu-img.png" alt="" title=""> 
                         <a href="#" class="dt-sc-button small" data-hover="Fitness Facts">Fitness Facts</a> </li>
                       </ul>

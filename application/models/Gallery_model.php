@@ -20,6 +20,6 @@ class Gallery_model extends CI_Model {
 			$extra = "WHERE gal.gallery_type_id = $typeId";
 		}
 		//print_r("SELECT gal.*, gal.gallery_id as id, likes.*, count(likes.gallery_likes_id) as cnt  FROM oc_gallery gal LEFT JOIN oc_gallery_likes likes ON(gal.gallery_id = likes.gallery_id) $extra GROUP BY likes.gallery_id ORDER BY id ASC");
-		return $this->db->query("SELECT gal.*, gal.gallery_id as id, likes.*, count(likes.gallery_likes_id) as cnt  FROM oc_gallery gal LEFT JOIN oc_gallery_likes likes ON(gal.gallery_id = likes.gallery_id) $extra GROUP BY id ORDER BY id ASC")->result_array();
+		return $this->db->query("SELECT gal.*, gal.gallery_id as id, likes.*, count(likes.gallery_likes_id) as cnt  FROM oc_gallery gal LEFT JOIN oc_gallery_likes likes ON(gal.gallery_id = likes.gallery_id) $extra GROUP BY id ORDER BY id DESC")->result_array();
 	}
 }

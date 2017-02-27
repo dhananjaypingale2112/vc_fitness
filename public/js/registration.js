@@ -557,14 +557,13 @@ function addProToWishlist(productId,customer_id)
 }
 function galleryLike(galleryId,customer_id)
 {
-    
-    var path = base_url+'gallery/addGalleryLike/'+galleryId;
+    $postLoginLike = "postLoginLike";
+    var path = base_url+'gallery/addGalleryLike/'+galleryId+'/'+$postLoginLike;
     $.ajax({
         type:"POST",
         url:path,
         success:function(resp)
         {
-            //alert(resp);
             var path = base_url+'gallery/index';
             window.location.href = path;
             

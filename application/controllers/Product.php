@@ -10,6 +10,7 @@ class Product extends CI_Controller {
         $this->load->model('Helper_model');
         $this->load->model('Packages_model');
         $this->load->model('Product_model');
+        $this->load->model('Gallery_model');
 
         $this->data['menu_programs'] = $this->Helper_model->selectAll("","oc_program_master");
 		$this->data['menu_trainings'] = $this->Helper_model->selectAll("","oc_training_type");
@@ -59,6 +60,7 @@ class Product extends CI_Controller {
 		$data['pageno'] = $pageno;
 
 		$data['newProduct'] = $this->Product_model->selectNewproduct();
+		$data['gallery'] = $this->Gallery_model->selectAllgallery();
 
 		
 		$data['page'] = "productspage";
@@ -72,8 +74,9 @@ class Product extends CI_Controller {
 		
 		$where = array('parent_id' => $catId);
 		$data['cat'] = $this->Product_model->select("","oc_category",$where);
+		$count = 0;
 		if(!empty($data['cat'])){
-			$count = 0;
+			
 		 	foreach ($data['cat'] as $key => $value){
 		 		$data1['products2'][$key] = $this->Product_model->selectAllProduct($value['category_id']);
 		 		foreach ($data1['products2'][$key] as $key1 => $value1){
@@ -81,6 +84,7 @@ class Product extends CI_Controller {
 		 		}
 		 	}
 		}
+
 		$perpage = 3;
 		$total_page=ceil($count / $perpage);
 		if($pageno<=$total_page)
@@ -90,19 +94,27 @@ class Product extends CI_Controller {
 				$x = $perpage * $newpage - $perpage;
 				$limit = "LIMIT $x,$y";
 				$data['products'] = array();
-				$extra = "W";
+				$extra = "WHERE W";
 				foreach ($data['cat'] as $key => $value){
 					
 					$extra .= " OR pro_cat.category_id = ".$value['category_id'];
 				}
 				$extra1 = str_replace("W OR","",$extra);
+				$extra1 = str_replace(" W","",$extra1);
+				if($extra1 == "WHERE")
+				{
+					$extra1 = "WHERE pro_cat.category_id = ".$catId;
+				}
+				//print_r($extra1);exit;
 				$data['products'] = $this->Product_model->selectAllCatProduct($extra1,$limit);
 			}
+		//echo "<pre>";print_r($data['products']);exit;
 		$data['total_page'] = $total_page;
 		$data['catId'] = $catId;
 		$data['pageno'] = $pageno;
 		$data['cat'] = $this->Product_model->selectCategory();
 		$data['newProduct'] = $this->Product_model->selectNewproduct();
+		$data['gallery'] = $this->Gallery_model->selectAllgallery();
 
 		$data['page'] = "productspage";
 		$this->load->view('templates/header',$data);
@@ -115,6 +127,8 @@ class Product extends CI_Controller {
 
 		$data['cat'] = $this->Product_model->selectCategory();
 		$data['products'] = $this->Product_model->selectSingelProduct($proId);
+		$data['newProduct'] = $this->Product_model->selectNewproduct();
+		$data['gallery'] = $this->Gallery_model->selectAllgallery();
 
 		$data['page'] = "productspage";
 		$this->load->view('templates/header',$data);
@@ -452,6 +466,58 @@ class Product extends CI_Controller {
 		$proCount = $this->Product_model->get_cnt('oc_customer_wishlist',$condition);
 		$this->session->set_userdata('wishCount', $proCount);
 		echo $proCount;
+	}
+	public function productSearching($catId="",$pageno = "")
+	{
+		$formData = $this->input->post();
+		print_r($formData);exit;
+
+		$data = $this->data;
+		$data['cat'] = $this->Product_model->selectCategory();
+		
+		if(empty($catId)){
+			foreach ($data['cat'] as $key => $value){
+				if($value['parent_id'] == 0){
+					foreach ($data['cat'] as $key1 => $value1){
+						if($value1['parent_id'] != 0 && $value['category_id'] == $value1['parent_id'] )
+						{
+							$catId = $value1['category_id'];
+							break;
+						}elseif(!empty($catId))
+						{
+							break;
+						}
+					}
+				} 
+			}
+		}
+		/**************** pagination ************/
+		$perpage = 3;
+		// $pageno = 0;
+		$count = $this->Product_model->countProduct($catId);
+		$total_page=ceil($count / $perpage);
+		if($pageno<=$total_page)
+			{
+				$newpage= ++$pageno;
+				//echo $newpage;exit;
+				$y = $perpage;
+				$x = $perpage * $newpage - $perpage;
+				$limit = "LIMIT $x,$y";
+
+				$data['products'] = $this->Product_model->selectProduct($catId,$limit);
+			}
+		$data['total_page'] = $total_page;
+		$data['catId'] = $catId;
+		$data['pageno'] = $pageno;
+
+		$data['newProduct'] = $this->Product_model->selectNewproduct();
+		$data['gallery'] = $this->Gallery_model->selectAllgallery();
+
+		
+		$data['page'] = "productspage";
+		$this->load->view('templates/header',$data);
+		$this->load->view('product/productList');
+		$this->load->view('templates/footer');
 	}
 
 	/*******************************************/

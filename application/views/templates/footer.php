@@ -18,12 +18,14 @@
             <h3 class="widgettitle"><span class="fa fa-link"></span>Useful Links</h3>
             <div class="textwidget">
               <ul>
-                <li><a href="#">Products</a></li>
+                <li><a href="<?php echo base_url();?>product/productView">Products</a></li>
+                <li><a href="<?php echo base_url('packages/packagesView');?>">Packages</a></li>
+                <li><a href="<?php echo base_url('programs/programView');?>">Programs</a></li>
                 <li><a href="<?php echo base_url('faq/faqView');?>">Faq's</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms Of Use</a></li>
                 <li><a href="#">Blogs</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="<?php echo base_url('contactUs/contactUsView');?>">Contact</a></li>
               </ul>
             </div>
           </aside>

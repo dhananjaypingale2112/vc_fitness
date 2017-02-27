@@ -4,8 +4,12 @@ $(document).ready(function() {
 });
 function addToCart(id,price,name,image,desc,delWish)
 {
+    //qty = 1;
     var qty = $("#quntity_"+id).val();
     var path = base_url+"product/addToCart";
+    if(typeof(qty) != "undefined" || qty !== null || qty !== "") {
+    qty = 1;
+}
     $.ajax({
         type:'POST',
         url:path,
