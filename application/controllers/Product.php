@@ -470,7 +470,43 @@ class Product extends CI_Controller {
 	public function productSearching($catId="",$pageno = "")
 	{
 		$formData = $this->input->post();
-		print_r($formData);exit;
+		//print_r($formData);exit;
+		@$search_param = $formData['search_param'];
+		@$search_value = $formData['search_value'];
+		if(isset($search_param) && $search_param =="its_equal")
+		{
+			//$sign = "=";
+			$extraPro = "WHERE pro.price = $search_value ";
+		}
+		else if(isset($search_param) && $search_param =="contains")
+		{
+			//$sign = "LIKE";
+			$extraPro = "WHERE pro.price LIKE '%$search_value%' OR pro_desc.name LIKE '%$search_value%'";
+		}
+		else if(isset($search_param) && $search_param =="greather_than")
+		{
+			// $sign = ">";
+			$extraPro = "WHERE pro.price > $search_value ";
+		}
+		else if(isset($search_param) && $search_param =="less_than")
+		{
+			// $sign = "<";
+			$extraPro = "WHERE pro.price < $search_value ";
+		}
+		else if(isset($search_param) && $search_param =="all")
+		{
+			$extraPro = "WHERE pro.price LIKE '%$search_value%' OR pro_desc.name LIKE '%$search_value%'";
+		}
+
+		
+		if(empty($catId))
+		{
+			@$catId = $formData['currCatId'];
+		}
+		if(empty($pageno))
+		{
+			@$pageno = $formData['currPageNo'];
+		}
 
 		$data = $this->data;
 		$data['cat'] = $this->Product_model->selectCategory();
@@ -494,7 +530,19 @@ class Product extends CI_Controller {
 		/**************** pagination ************/
 		$perpage = 3;
 		// $pageno = 0;
-		$count = $this->Product_model->countProduct($catId);
+		$extraCat = "WHERE  pro_cat.category_id = $catId";
+		$count = $this->Product_model->countSearchingProduct($extraCat);
+
+		// if(isset($catId) && $catId != "" && $catId != "null"){
+
+			//$extraPro = "WHERE pro_cat.category_id = $catId";
+			// if(isset($search_param) && $search_param != "" && $search_param != "null"){
+			// 	$extraPro = "WHERE pro.price $sign $search_value ";
+			// }
+			//print_r($extraPro);exit;
+
+		//  }
+		// print_r($data['products']);exit;
 		$total_page=ceil($count / $perpage);
 		if($pageno<=$total_page)
 			{
@@ -504,8 +552,9 @@ class Product extends CI_Controller {
 				$x = $perpage * $newpage - $perpage;
 				$limit = "LIMIT $x,$y";
 
-				$data['products'] = $this->Product_model->selectProduct($catId,$limit);
+				$data['products'] = $this->Product_model->selectSeachingProduct($extraPro,$limit);
 			}
+		//echo "<pre>";print_r($data['products']);exit;
 		$data['total_page'] = $total_page;
 		$data['catId'] = $catId;
 		$data['pageno'] = $pageno;
@@ -513,7 +562,6 @@ class Product extends CI_Controller {
 		$data['newProduct'] = $this->Product_model->selectNewproduct();
 		$data['gallery'] = $this->Gallery_model->selectAllgallery();
 
-		
 		$data['page'] = "productspage";
 		$this->load->view('templates/header',$data);
 		$this->load->view('product/productList');

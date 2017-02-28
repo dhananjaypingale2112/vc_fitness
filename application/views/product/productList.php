@@ -64,7 +64,7 @@
 						<?php endif; $cnt++; endforeach; ?>
 														
 														</aside>
-														<aside class="widget widget_categories">
+														<!-- <aside class="widget widget_categories">
 																<div class="widgettitle">
 																	<h3>Categories</h3>
 																		<span></span>
@@ -76,7 +76,7 @@
 																		<li class="cat-item"><a title="#" href="#">Tools<span> 1</span></a></li>
 																		<li class="cat-item"><a title="#" href="#">Training<span> 3</span></a></li>
 																</ul>
-													 </aside>
+													 </aside> -->
 														 
 														 <aside class="widget widget_popular_entries">
 																<div class="widgettitle">
@@ -98,7 +98,7 @@
 																		</ul>
 																</div>
 														</aside>
-														<aside class="widget widget_archive">
+														<!-- <aside class="widget widget_archive">
 																<div class="widgettitle">
 																	<h3>Archives</h3>
 																		<span></span>
@@ -110,8 +110,8 @@
 																		<li><a href="#">Jan 2014<span> 4</span></a></li>
 																		<li><a href="#">Dec 2014<span> 2</span></a></li>
 																</ul>
-														</aside>
-														<aside class="widget widget_social_profile">
+														</aside> -->
+														<!-- <aside class="widget widget_social_profile">
 																<div class="widgettitle">
 																	<h3>Social Widget</h3>
 																		<span></span>
@@ -122,14 +122,15 @@
 																		<li class="flickr"><a href="#" class="fa fa-flickr"></a></li>
 																		<li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
 																</ul>
-													</aside>
+													</aside> -->
 														 
 												</section>
 											<section id="primary" class="page-with-sidebar page-with-left-sidebar">
 													<!--<div class="tpl-blog-holder apply-isotope">-->
 														<div class="dt-sc-one-column column">
+            <form action="<?php echo base_url('product/productSearching') ?>" method="post">
 							<div class="input-group">
-							<form action="<?php echo base_url('product/productSearching') ?>" method="post">
+							
 								<div class="input-group-btn search-panel">
 										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 												<span id="search_concept">All Categories</span> <span class="caret"></span>
@@ -145,16 +146,17 @@
 								</div>
 								<input type="hidden" name="search_param" value="all" id="search_param">
 								<!-- <?php echo $_SERVER['REQUEST_URI'];?> -->
-								<?php $currCatId=$this->uri->segment(3); ?>
+								<!-- <?php $currCatId=$this->uri->segment(3); ?>
 								<?php $currPageNo =$this->uri->segment(4);?>
 								<input type="text" name="currCatId" value="<?php echo empty($currCatId)?"":$currCatId;?>" id="aaaa">
-								<input type="text" name="currPageNo" value="<?php echo empty($currPageNo)?"":$currPageNo;?>" id="aaaa">         
+								<input type="text" name="currPageNo" value="<?php echo empty($currPageNo)?"":$currPageNo;?>" id="aaaa">   -->       
 								<input type="text" class="form-control" name="search_value" placeholder="Search term...">
 								<span class="input-group-btn">
 										<button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
 								</span>
-							</form>
+							
 						</div>
+            </form>
 														<div class="dt-sc-clear"></div>
 					 <hr>
 																						 <div class="well well-sm">
@@ -174,7 +176,7 @@
 				<div class="item  col-xs-12 col-lg-4">
 					<span class="thumbnail">
 						<img src="<?php echo base_url()."public/images/".$value['image'];?>" alt="...">
-						<h4><?php echo $value['name'];?></h4>
+						<h4><a href="<?php echo base_url().'product/productDetails/'.$value['product_id'];?>"><?php echo $value['name'];?></a></h4>
 						<p>&#x20B9;<?php echo $value['price'];?></p>
 							 <div class="row">
 							<div class="col-md-6 col-sm-6">
@@ -194,7 +196,9 @@
 									<a data-toggle="tooltip" title="Remove From Wishlist" onclick="removeWishlistItem('<?php echo $value['product_id'];?>')"><span class="fa fa-heart wishListheart" id="wishListheart12_<?php echo $value['product_id'];?>" ></span></a>
 								<?php else: ?>
 									<a data-toggle="tooltip" title="Wishlist" onclick="addToWishlist('<?php echo $value['product_id'];?>','<?php echo $customer_id;?>')"><span class="fa fa-heart" id="wishListheart_<?php echo $value['product_id'];?>"></span></a>
-								<?php endif;endif; ?>
+								<?php endif; else: ?>
+                  <a data-toggle="tooltip" title="Wishlist" onclick="addToWishlist('<?php echo $value['product_id'];?>','<?php echo $customer_id;?>')"><span class="fa fa-heart" id="wishListheart_<?php echo $value['product_id'];?>"></span></a>
+                <?php endif; ?>
 									<a href="<?php echo base_url().'product/productDetails/'.$value['product_id'];?>" data-toggle="tooltip" title="Details"><span class="fa fa-search-plus"></span></a>
 									<!-- <a href="" data-toggle="tooltip" title="Compare"><span class="fa fa-bar-chart"></span></a> -->
 								</div>

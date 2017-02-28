@@ -56,7 +56,7 @@
             <?php endif; $cnt++; endforeach; ?>
                             
                             </aside>
-                            <aside class="widget widget_categories">
+                            <!-- <aside class="widget widget_categories">
                                 <div class="widgettitle">
                                   <h3>Categories</h3>
                                     <span></span>
@@ -68,7 +68,7 @@
                                     <li class="cat-item"><a title="#" href="#">Tools<span> 1</span></a></li>
                                     <li class="cat-item"><a title="#" href="#">Training<span> 3</span></a></li>
                                 </ul>
-                           </aside>
+                           </aside> -->
                              
                              <aside class="widget widget_popular_entries">
                                 <div class="widgettitle">
@@ -90,7 +90,7 @@
                                     </ul>
                                 </div>
                             </aside>
-                            <aside class="widget widget_archive">
+                            <!-- <aside class="widget widget_archive">
                                 <div class="widgettitle">
                                   <h3>Archives</h3>
                                     <span></span>
@@ -102,8 +102,8 @@
                                     <li><a href="#">Jan 2014<span> 4</span></a></li>
                                     <li><a href="#">Dec 2014<span> 2</span></a></li>
                                 </ul>
-                            </aside>
-                            <aside class="widget widget_social_profile">
+                            </aside> -->
+                            <!-- <aside class="widget widget_social_profile">
                                 <div class="widgettitle">
                                   <h3>Social Widget</h3>
                                     <span></span>
@@ -114,7 +114,7 @@
                                     <li class="flickr"><a href="#" class="fa fa-flickr"></a></li>
                                     <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
                                 </ul>
-                          </aside>
+                          </aside> -->
                              
                         </section>
             

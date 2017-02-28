@@ -296,7 +296,7 @@
                     </div>
                     <a class="dt-menu-expand">+</a> </li>
 
-                    <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='productspage')?"current_page_item":""?>"> <a href="<?php echo base_url();?>product/productView" title=""> Fitness Products </a>
+                    <!-- <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='productspage')?"current_page_item":""?>"> <a href="<?php echo base_url();?>product/productView" title=""> Fitness Products </a>
                     <div class="megamenu-child-container">
                       <ul class="sub-menu">
                       <?php  foreach ($menu_cat as $key12 => $value) :
@@ -329,7 +329,43 @@
                         <a href="#" class="dt-sc-button small" data-hover="Fitness Facts">Fitness Facts</a> </li>
                       </ul>
                     </div>
-                    <a class="dt-menu-expand">+</a> </li>
+                    <a class="dt-menu-expand">+</a> 
+                  </li> -->
+
+                  <li class="menu-item-megamenu-parent  megamenu-4-columns-group menu-item-depth-0 <?php echo ($page =='productspage')?"current_page_item":""?>"> <a href="<?php echo base_url();?>product/productView" title=""> Fitness Products </a>
+                    <div class="megamenu-child-container">
+                      <ul class="sub-menu">
+                      <?php $catCnt = 1; foreach ($menu_cat as $key12 => $value) :
+                              
+                                  if($value['parent_id'] == 0 && $catCnt<4):
+                        ?>
+                        <li>
+                          <div class="widgettitle"> <a href="<?php echo base_url('product/allProductView/').$value['category_id'];?>"> <?php echo $value['name'];?></a> </div>
+                          <ul class="sub-menu">
+                        <?php $procnt=1; 
+                              foreach ($menu_cat as $key1 => $value1) : 
+                                if($value1['parent_id'] != 0 && $value['category_id'] == $value1['parent_id'] ):
+                        ?>
+                            <li> <a href="<?php echo base_url('product/productView/').$value1['category_id'];?>"> <?php echo $value1['name'] ?> </a> </li>
+                        <?php $procnt++; 
+                              endif; 
+                              if($procnt == 5): 
+                        ?>
+                          <li> <a href="<?php echo base_url();?>product/productView"> More... </a> </li>
+                          <?php $procnt++; endif;endforeach; ?>
+                          </ul>
+                          <a class="dt-menu-expand">+</a> 
+                        </li>
+                      <?php $catCnt++; 
+                            endif; ;
+                            endforeach; 
+                      ?>
+                        <li> <img src="<?php echo base_url();?>public/images/menu-img.png" alt="" title=""> 
+                        <a href="#" class="dt-sc-button small" data-hover="Fitness Facts">Fitness Facts</a> </li>
+                      </ul>
+                    </div>
+                    <a class="dt-menu-expand">+</a> 
+                  </li>
                     
                     
                   <li class="menu-item-simple-parent menu-item-depth-0 <?php echo ($page =='successStories')?"current_page_item":""?>"><a href="<?php echo base_url('Testimonials/testimonialsView');?>">Success Stories </a>

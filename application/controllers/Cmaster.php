@@ -24,6 +24,7 @@ class Cmaster extends CI_Controller {
 	{
 		$data = $this->data;
 		
+		//echo "<pre>";print_r($data['menu_cat']);exit;
 		$data['page'] = "index";
 		$this->load->view('templates/header',$data);
 		$this->load->view('index');
