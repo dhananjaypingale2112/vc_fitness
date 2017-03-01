@@ -603,7 +603,7 @@ jQuery(document).ready(function($){
 		errorPlacement: function(error, element) { }
 	});
 
-	//BMI Calculation...
+	//BMI Calculation For Men...
 	$('form[name="frmbmi"]').submit(function(){
 		var This = $(this);
 		if($(This).valid()) {
@@ -611,17 +611,37 @@ jQuery(document).ready(function($){
 			var inc = $('input[name="txtinches"]').val();
 			var tinc = ( parseInt(fet) * 12 ) + parseInt(inc);
 
-			alert(fet);alert(inc);alert(tinc);
+			//alert(fet);alert(inc);alert(tinc);
 			
 			var lbs = $('input[name="txtlbs"]').val();
 			
-			alert(lbs);
+			//alert(lbs);
 			var bmi = ( parseFloat(lbs) / (tinc * tinc) ) * 703;
-			alert(bmi);
+			//alert(bmi);
 			$('input[name="txtbmi"]').val(parseFloat(bmi).toFixed(1));
 		}
 		return false;
 	});
+	//BMI Calculation For women...
+	$('form[name="frmbmi_women"]').submit(function(){
+		var This = $(this);
+		if($(This).valid()) {
+			var fet = $('input[name="txtfeet1"]').val();
+			var inc = $('input[name="txtinches1"]').val();
+			var tinc = ( parseInt(fet) * 12 ) + parseInt(inc);
+
+			//alert(fet);alert(inc);alert(tinc);
+			
+			var lbs = $('input[name="txtlbs1"]').val();
+			
+			//alert(lbs);
+			var bmi = ( parseFloat(lbs) / (tinc * tinc) ) * 703;
+			//alert(bmi);
+			$('input[name="txtbmi1"]').val(parseFloat(bmi).toFixed(1));
+		}
+		return false;
+	});
+
 	
 	//BMI View...
 	if($("a.fancyInline").length) {

@@ -143,7 +143,7 @@
               </div>
               <span class="review-no">41 reviews</span>
             </div>
-            <p class="product-description"><?php echo $products[0]['meta_title'];?></p>
+            <p class="product-description"><?php echo $products[0]['description'];?></p>
             <h4 class="price">current price: <span><?php echo $products[0]['price'];?></span></h4>
             <p class="vote"><strong>51%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
             <!--<h5 class="sizes">sizes:
@@ -182,14 +182,14 @@
         </div>
       </div>
     </div>
-           <hr>
+          <hr>
                                               
       
     
     <div class="container">
   <div class="row" id="slider-text">
     <div class="col-md-6" >
-      <h2>NEW COLLECTION</h2>
+      <h2>NEW  </h2>
     </div>
   </div>
 </div>

@@ -569,19 +569,19 @@
                   </form>
                 </div>
                 <div class="dt-sc-tabs-frame-content">
-                  <form name="frmbmi" action="#" class="dt-sc-bmi-frm">
+                  <form name="frmbmi_women" action="#" class="dt-sc-bmi-frm">
                     <div class="dt-sc-bmi-frm-detail">
                       <div class="dt-sc-two-third column first">
                         <label>Height in Ft/in</label>
                         <div class="dt-sc-clear"></div>
-                        <input type="text" name="txtfeet" placeholder="FT">
-                        <input type="text" name="txtinches" placeholder="IN">
+                        <input type="text" name="txtfeet1" placeholder="FT">
+                        <input type="text" name="txtinches1" placeholder="IN">
                         <div class="dt-sc-clear"></div>
                         <input type="submit" name="subbmi" value="Calculate Bmi">
                       </div>
                       <div class="dt-sc-one-third column">
                         <label>Weight in lbs</label>
-                        <input type="text" name="txtlbs" placeholder="LBS">
+                        <input type="text" name="txtlbs1" placeholder="LBS">
                         <div class="dt-sc-clear"></div>
                         <input type="reset" name="subbmi" value="Reset">
                       </div>
@@ -590,7 +590,7 @@
                       <div class="dt-sc-hr-invisible"></div>
                       <label>Your BMI is</label>
                       <div class="dt-sc-clear"></div>
-                      <input type="text" readonly name="txtbmi" placeholder="0.0">
+                      <input type="text" readonly name="txtbmi1" placeholder="0.0">
                       <div class="dt-sc-clear"></div>
                       <div class="dt-sc-hr-invisible-small"></div>
                       <a href="#tblbmicontent" class="fancyInline" data-hover="BMI Class">View BMI Class <i class="fa fa-arrow-circle-right"></i></a>
@@ -598,6 +598,7 @@
                     </div>
                   </form>
                 </div>
+                
               </div>
               <div id="tblbmicontent" class="tblbmi">
                 <div class="dt-inner-content">

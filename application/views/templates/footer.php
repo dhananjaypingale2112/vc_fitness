@@ -18,9 +18,9 @@
             <h3 class="widgettitle"><span class="fa fa-link"></span>Useful Links</h3>
             <div class="textwidget">
               <ul>
-                <li><a href="<?php echo base_url();?>product/productView">Products</a></li>
+                <!-- <li><a href="<?php echo base_url();?>product/productView">Products</a></li>
                 <li><a href="<?php echo base_url('packages/packagesView');?>">Packages</a></li>
-                <li><a href="<?php echo base_url('programs/programView');?>">Programs</a></li>
+                <li><a href="<?php echo base_url('programs/programView');?>">Programs</a></li> -->
                 <li><a href="<?php echo base_url('faq/faqView');?>">Faq's</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms Of Use</a></li>
@@ -31,18 +31,35 @@
           </aside>
         </div>
         <div class="column dt-sc-one-fourth">
+          <aside class="widget widget_text">
+            <h3 class="widgettitle"><span class="fa fa-link"></span>Site Map</h3>
+            <div class="textwidget">
+              <ul>
+                <li><a href="<?php echo base_url();?>">Home</a></li>
+                <li><a href="<?php echo base_url('aboutus');?>">About us</a></li>
+                <li><a href="<?php echo base_url('programs/programView');?>">Programs</a></li>
+                <li><a href="<?php echo base_url('packages/packagesView');?>">Packages</a></li>
+                <li><a href="<?php echo base_url();?>product/productView">Products</a></li>
+                <li><a href="<?php echo base_url('Testimonials/testimonialsView');?>">Success Stories </a></li>
+                <li><a href="<?php echo base_url('gallery');?>"> Gallery </a></li>
+                <li><a href="<?php echo base_url('contactUs/contactUsView');?>">Contact</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <!-- <div class="column dt-sc-one-fourth">
           <aside class="widget widget_tweetbox">
             <h3 class="widgettitle"><span class="fa fa-twitter"></span>Twitter Updates</h3>
             <div class="tweet_list"> </div>
           </aside>
-        </div>
+        </div> -->
         <div class="column dt-sc-one-fourth">
           <aside class="widget widget_recent_entries">
             <h3 class="widgettitle"><span class="fa fa-calendar"></span>Upcoming Events</h3>
             <div class="recent-posts-widget">
               <ul>
                 <li> <a href="#" class="entry-thumb"><img src="<?php echo base_url();?>public/images/blog-thumb.jpg" alt="" title=""></a>
-                  <h4><a href="#">Training with Dumbell</a></h4>
+                  <h4><a href="<?php echo base_url('UpcommingEvents');?>">Training with Dumbell</a></h4>
                   <div class="entry-metadata">
                     <p class="date">26 May 2014</p>
                   </div>
@@ -411,6 +428,23 @@ $(document).ready(function(){
       });
     });
   </script>
+
+   <script>
+     
+window.info = function(msg) {
+  var dom = '<div class="top-alert"><div class="alert alert-info alert-dismissible fade in " role="alert"><i class="fa fa-info-sign"></i> ' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div></div>';
+  var jdom = $(dom);
+  jdom.hide();
+  $("body").append(jdom);
+  jdom.fadeIn();
+  setTimeout(function() {
+    jdom.fadeOut(function() {
+      jdom.remove();
+    });
+  }, 6000);
+}
+ 
+    </script>
  
 <!--products-end-->
 <!-- **jQuery** -->
