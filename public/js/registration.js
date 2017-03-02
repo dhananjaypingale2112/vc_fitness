@@ -213,7 +213,7 @@ function verifyOtp()
                     $("#verify_otp_btn").hide();
                     $("#verify_mob_btn").hide();
                     $("#nxtBtn").show();
-                    // var msg = 'Enter OTP Whic !';
+                    // var msg = 'Enter OTP  !';
                     // display_alert('succ',msg);
                 }
                 else if(resp == 0)
@@ -550,7 +550,7 @@ function addProToWishlist(productId,customer_id)
             $('#wishListItems').html(resp);
             if(resp != "")
             {
-                alert("Item added to Wishlist..!");
+                info("Product added to Wishlist..!");
             }
         }
     });

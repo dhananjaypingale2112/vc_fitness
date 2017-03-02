@@ -43,6 +43,9 @@
 <!-- **Font Awesome** -->
 <link rel="stylesheet" href="<?php echo base_url();?>public/css/font-awesome.min.css" />
 <link rel="stylesheet" href="<?php echo base_url();?>public/css/flaticon.css" />
+<link rel="stylesheet" href="<?php echo base_url();?>public/css/easy-responsive-tabs.css" />
+<script src="<?php echo base_url();?>public/js/easyResponsiveTabs.js"></script>
+
 
 <!-- **Google - Fonts** -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -65,6 +68,8 @@
  <!-- slider-awards-and-achivements-end --> 
  <link rel="stylesheet" href="<?php echo base_url();?>public/css/bootstrap/bootstrap.min.css">
   <script src="<?php echo base_url();?>public/css/bootstrap/jquery.min.js"></script>
+  
+<script src="<?php echo base_url();?>public/js/easyResponsiveTabs.js"></script>
   <script src="<?php echo base_url();?>public/css/bootstrap/bootstrap.min.js"></script>
       <!-- slider-awards-and-achivements-end --> 
      <!-- slider-corporate --> 
@@ -109,7 +114,7 @@
             <div class="top-right">
               <ul>
               <?php if(!empty($customer_id)):?>
-                <li><a title="Login" href="<?php echo base_url('Auth/myAccount');?>"><span class="fa fa-sign-in"></span>Hi..<?php echo $firstname; ?></a></li>
+                <li><a title="Login" href="<?php echo base_url('my_account');?>"><span class="fa fa-sign-in"></span>Hi..<?php echo $firstname; ?></a></li>
                 <li><a title="Wishlist" href="<?php echo base_url('product/wishlistView');?>"><span class="fa fa-cart-arrow-down"></span> Wishlist - <div id="wishListItems" style="float:right"><?php echo $wishCount; ?></a></li>
                 <li><a title="Register Now" href="<?php echo base_url('product/cartView');?>"><span class="fa fa-cart-arrow-down"></span> view Cart - <div id="totalItems" style="float:right"><?php echo $totalItems; ?></a></li>
                 <li><a title="logout Now" href="<?php echo base_url('Auth/logout');?>"><span class="fa fa-user"></span> logout </a></li>

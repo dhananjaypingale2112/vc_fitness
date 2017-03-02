@@ -20,7 +20,7 @@ function addToCart(id,price,name,image,desc,delWish)
             $('#totalItems').html(resp);
             if(resp != "")
             {
-                alert("item added");
+                info("Product added Successfully..!");
             }
         }   
         });  
@@ -50,7 +50,8 @@ function confirmOrder()
             }
             else
             {
-                alert("error");
+                info("error");
+
             }
         }   
         });
@@ -95,7 +96,8 @@ function subTotal(id,price,rowid,operation)
             });        
     }
     else{
-        alert("Quntity must be atleast One");
+        //alert("Quntity must be atleast One");
+        info('Quntity must be atleast One..!');
     }
 }
 function addToWishlist(productId,customer_id)
@@ -118,7 +120,8 @@ function addToWishlist(productId,customer_id)
                 $('#wishListheart_'+productId).css("color","red");
                 if(resp != "")
                 {
-                    alert("Item added to Wishlist..!");
+                    //alert("Item added to Wishlist..!");
+                    info('Product Added Successfully.');
                 }
             }
         });
@@ -136,6 +139,7 @@ function removeCardItem(rowId,productId)
             if(resp != "")
             {
                 $("#row_"+productId).parent().parent().remove();
+                info('Product Removed.');
             }
         }
     });
@@ -155,6 +159,7 @@ function removeWishlistItem(productId)
             if(resp != "")
             {
                 $("#row_"+productId).parent().parent().remove();
+                info('Product Removed.');
             }
         }
     });
@@ -169,7 +174,8 @@ function confirmCustAddress(){
         $('#termsConditions').attr('onclick','return false');
     }
     else{
-        alert("Please agree with Terms & Conditions")
+        //alert("Please agree with Terms & Conditions")
+        info('Please agree with Terms & Conditions..!');
     }
 }
 function confirmDeliveryMethod(){
@@ -188,6 +194,7 @@ function confirmPaymentMethod(){
         $('#payTermsConditions').attr('onclick','return false');
     }
     else{
-        alert("Please agree with Terms & Conditions")
+        // alert("Please agree with Terms & Conditions")
+        info('Please agree with Terms & Conditions..!');
     }
 }

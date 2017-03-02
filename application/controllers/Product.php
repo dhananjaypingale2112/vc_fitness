@@ -23,7 +23,7 @@ class Product extends CI_Controller {
 	{
 		$data = $this->data;
 		$data['cat'] = $this->Product_model->selectCategory();
-		
+		 
 		if(empty($catId)){
 			foreach ($data['cat'] as $key => $value){
 				if($value['parent_id'] == 0){

@@ -1,9 +1,9 @@
-body {
+/*body {
     margin: 0px;
     padding: 0px;
     background: #f5f5f5;
     font-family: 'Segoe UI';
-}
+}*/
 
 ul.resp-tabs-list, p {
     margin: 0px;
@@ -19,6 +19,7 @@ ul.resp-tabs-list, p {
     list-style: none;
     cursor: pointer;
     float: left;
+    border-top: 4px solid #dedede;
 }
 
 .resp-tabs-container {
@@ -35,15 +36,17 @@ h2.resp-accordion {
 
 .resp-tab-content {
     display: none;
-    padding: 15px;
+    padding: 15px 0px;
 }
 
 .resp-tab-active {
-	border: 1px solid #5AB1D0 !important;
+	/*border: 1px solid #f26522 !important;*/
 	border-bottom: none;
+    border-left: none;
+    border-right: none;
 	margin-bottom: -1px !important;
 	padding: 12px 14px 14px 14px !important;
-	border-top: 4px solid #5AB1D0 !important;
+	border-top: 4px solid #f26522 !important;
 	border-bottom: 0px #fff solid !important;
 }
 
@@ -57,9 +60,11 @@ h2.resp-accordion {
 }
 
 .resp-tab-content {
-    border: 1px solid #c1c1c1;
-	border-top-color: #5AB1D0;
+    border: 1px solid #fff;
+	border-top-color: #fff;
 }
+.resp-tab-content h4{border-bottom: 1px solid #dedede; padding-bottom: 10px;}
+.resp-tab-content table img{width: 80px; height: 80px;}
 
 h2.resp-accordion {
     font-size: 13px;
@@ -83,7 +88,7 @@ h2.resp-tab-title:last-child {
 /*-----------Vertical tabs-----------*/
 .resp-vtabs ul.resp-tabs-list {
     float: left;
-    width: 30%;
+    width: 22%;
 }
 
 .resp-vtabs .resp-tabs-list li {
@@ -91,35 +96,42 @@ h2.resp-tab-title:last-child {
     padding: 15px 15px !important;
     margin: 0 0 4px;
     cursor: pointer;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.65) !important;
+    border-top: 1px solid rgba(230, 230, 230, 0.65) !important;
     float: none;
 }
 
 .resp-vtabs .resp-tabs-container {
-    padding: 0px;
     background-color: #fff;
-    border: 1px solid #c1c1c1;
-    float: left;
-    width: 68%;
-    min-height: 250px;
-    border-radius: 4px;
+    border: 1px solid #dedede !important;
     clear: none;
+    float: left;
+    min-height: auto;
+    padding: 0 3%;
+    width: 77%;
+    margin: 0.5%;
 }
 
 .resp-vtabs .resp-tab-content {
     border: none;
     word-wrap: break-word;
 }
+.resp-vtabs .resp-tab-content form{ margin: 0px 3%; }
+.resp-vtabs .resp-tab-content .dt-sc-button{margin-bottom: 2%;}
 
 .resp-vtabs li.resp-tab-active { 
 position: relative;
 z-index: 1;
-margin-right: -1px !important;
+margin-right: 2px !important;
 padding: 14px 15px 15px 14px !important;
-border-top: 1px solid;
-border: 1px solid #5AB1D0 !important;
-border-left: 4px solid #5AB1D0 !important;
+border-top: 1px solid #fff !important;
+border-bottom: none;
+border-right: none;
+/*border: 1px solid #f26522 !important;*/
+border-left: 4px solid #ccc !important;
 margin-bottom: 4px !important;
-border-right: 1px #FFF solid !important;
+/*border-right: 1px #FFF solid !important;*/
+background: rgba(222, 222, 222, 0.61) !important;
 }
 
 .resp-arrow {

@@ -637,7 +637,7 @@ jQuery(document).ready(function($){
 			//alert(lbs);
 			var bmi = ( parseFloat(lbs) / (tinc * tinc) ) * 703;
 			//alert(bmi);
-			$('input[name="txtbmi1"]').val(parseFloat(bmi).toFixed(1));
+			$('input[name="txtbmi1"]').val(parseFloat( ).toFixed(1));
 		}
 		return false;
 	});
