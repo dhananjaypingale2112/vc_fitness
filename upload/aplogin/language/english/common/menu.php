@@ -100,8 +100,14 @@ $_['text_openbay_report_price']        = 'Pricing report';
 $_['text_openbay_order_import']        = 'Order import';
 $_['text_paypal_manage']               = 'PayPal';
 $_['text_paypal_search']               = 'Search';
+
 $_['text_package_main']               = 'Package';
-$_['text_package_add']               = 'Package';
-$_['text__main']               = 'Package';
-$_['text_package_main']               = 'Package';
-$_['text_package_main']               = 'Package';
+$_['text_package_add']               = 'Add Package';
+$_['text_package_list']               = 'Package List';
+
+$_['text_traning_type']               = 'Traning Type';
+$_['text_traning_list']               = 'Traning List';
+$_['text_traning_add']               = 'Add Traning';
+
+$_['text_video_master']               = 'Video Master';
+$_['text_video_add']               = 'Add Video';

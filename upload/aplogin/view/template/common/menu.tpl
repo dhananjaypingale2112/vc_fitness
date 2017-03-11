@@ -108,21 +108,9 @@
 
   <li id="sale"><a class="parent"><i class="fa fa-shopping-cart fa-fw"></i> <span><?php echo $text_package_main; ?></span></a>
     <ul>
-      <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-      <li><a href="<?php echo $pikinglist; ?>"><?php echo $text_pikinglist; ?></a></li>
-      <li><a href="<?php echo $order_recurring; ?>"><?php echo $text_order_recurring; ?></a></li>
-      <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
-      <li><a class="parent"><?php echo $text_voucher; ?></a>
-        <ul>
-          <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-          <li><a href="<?php echo $voucher_theme; ?>"><?php echo $text_voucher_theme; ?></a></li>
-        </ul>
-      </li>
-      <li><a class="parent"><?php echo $text_paypal ?></a>
-        <ul>
-          <li><a href="<?php echo $paypal_search ?>"><?php echo $text_paypal_search ?></a></li>
-        </ul>
-      </li>
+      <li><a href="<?php echo $package_list; ?>"><?php echo $text_package_list; ?></a></li>
+      <li><a href="<?php echo $traning_list; ?>"><?php echo $text_traning_type; ?></a></li>
+      <li><a href="<?php echo $video_list; ?>"><?php echo $text_video_master; ?></a></li>
     </ul>
   </li>
   

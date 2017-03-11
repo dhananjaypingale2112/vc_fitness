@@ -801,7 +801,7 @@
                                 	<div class="dt-sc-one first">
                                   <p>Please complete the form below to request an RMA number.</p>
                                   <!-- Order Information -->
-	                               <form action="http://demo.proxanttech.com/vnf/index.php?route=account/return/add" method="post" enctype="multipart/form-data" class="form-horizontal">
+	                               <form action="http://localhost/vnf/index.php?route=account/return/add" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
           <h4>Order Information</h4>
           <div class="form-group required">

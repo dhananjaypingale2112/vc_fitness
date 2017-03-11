@@ -110,7 +110,15 @@ class ControllerCommonMenu extends Controller {
 		$data['text_openbay_order_import'] = $this->language->get('text_openbay_order_import');
 
 		$data['text_package_main'] = $this->language->get('text_package_main');
+		$data['text_package_add'] = $this->language->get('text_package_add');
+		$data['text_package_list'] = $this->language->get('text_package_list');
 		
+		$data['text_traning_type'] = $this->language->get('text_traning_type');
+		$data['text_traning_list'] = $this->language->get('text_traning_list');
+		$data['text_traning_add'] = $this->language->get('text_traning_add');
+
+		$data['text_video_master'] = $this->language->get('text_video_master');
+		$data['text_video_add'] = $this->language->get('text_video_add');
 
 		$data['analytics'] = $this->url->link('extension/analytics', 'token=' . $this->session->data['token'], 'SSL');
 		$data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
@@ -189,6 +197,15 @@ class ControllerCommonMenu extends Controller {
 		$data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');
 		$data['recurring'] = $this->url->link('catalog/recurring', 'token=' . $this->session->data['token'], 'SSL');
 		$data['order_recurring'] = $this->url->link('sale/recurring', 'token=' . $this->session->data['token'], 'SSL');
+
+
+		$data['package_add'] = $this->url->link('package/package_add', 'token=' . $this->session->data['token'], 'SSL');
+		$data['traning_add'] = $this->url->link('package/traning_add', 'token=' . $this->session->data['token'], 'SSL');
+		$data['video_add'] = $this->url->link('package/video_add', 'token=' . $this->session->data['token'], 'SSL');
+
+		$data['package_list'] = $this->url->link('package/package_list', 'token=' . $this->session->data['token'], 'SSL');
+		$data['traning_list'] = $this->url->link('package/traning_list', 'token=' . $this->session->data['token'], 'SSL');
+		$data['video_list'] = $this->url->link('package/video_list', 'token=' . $this->session->data['token'], 'SSL');
 
 		$data['openbay_show_menu'] = $this->config->get('openbaypro_menu');
 		$data['openbay_link_extension'] = $this->url->link('extension/openbay', 'token=' . $this->session->data['token'], 'SSL');
